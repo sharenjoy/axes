@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "338e86270988165325cf624b397aae61",
+    "hash": "e3c95218549b6c17299705063ae7a6b7",
     "packages": [
         {
             "name": "cartalyst/sentry",
@@ -1395,17 +1395,17 @@
             "time": "2015-02-15 18:50:21"
         },
         {
-            "name": "sharenjoy/core",
+            "name": "sharenjoy/cmsharenjoy",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sharenjoy/core.git",
-                "reference": "dcf2ab7c4678b492d4aae4a95774f39ff76fbaf1"
+                "url": "https://github.com/sharenjoy/cmsharenjoy.git",
+                "reference": "aa1f81c9781ef7ee707f18ce0e4dcb393ad42b8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sharenjoy/core/zipball/dcf2ab7c4678b492d4aae4a95774f39ff76fbaf1",
-                "reference": "dcf2ab7c4678b492d4aae4a95774f39ff76fbaf1",
+                "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/aa1f81c9781ef7ee707f18ce0e4dcb393ad42b8f",
+                "reference": "aa1f81c9781ef7ee707f18ce0e4dcb393ad42b8f",
                 "shasum": ""
             },
             "require": {
@@ -1424,7 +1424,7 @@
                     "email": "ronald.jian@gmail.com"
                 }
             ],
-            "time": "2015-02-17 14:45:48"
+            "time": "2015-02-17 18:52:48"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3559,7 +3559,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "sharenjoy/core": 20,
+        "sharenjoy/cmsharenjoy": 20,
         "teepluss/theme": 20
     },
     "prefer-stable": false,

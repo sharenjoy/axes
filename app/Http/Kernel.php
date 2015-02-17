@@ -28,7 +28,7 @@ class Kernel extends HttpKernel {
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
 
-		// for backend
+		// for backend cmsharenjoy
 		'admin.auth' => 'Sharenjoy\Cmsharenjoy\Http\Middleware\Authenticate',
 		'admin.guest' => 'Sharenjoy\Cmsharenjoy\Http\Middleware\RedirectIfAuthenticated',
 	];

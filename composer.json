@@ -1,5 +1,5 @@
 {
-    "name": "sharenjoy/cmsharenjoy",
+    "name": "sharenjoy/axes",
     "description": "This is cms",
     "license": "MIT",
     "type": "project",
@@ -12,7 +12,7 @@
     "require": {
         "laravel/framework": "5.0.*",
         "illuminate/html": "~5.0",
-        "sharenjoy/core": "dev-master",
+        "sharenjoy/cmsharenjoy": "dev-master",
         "guzzlehttp/guzzle": "~4.0",
         "pda/pheanstalk": "~3.0",
         "predis/predis": "~1.0",
@@ -30,7 +30,10 @@
     "autoload": {
         "classmap": [
             "database"
-        ]
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
     },
     "autoload-dev": {
         "classmap": [

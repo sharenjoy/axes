@@ -11,6 +11,9 @@ class EventServiceProvider extends ServiceProvider {
 	 * @var array
 	 */
 	protected $listen = [
+		// 'event.name' => [
+		// 	'EventListener',
+		// ],
 		'controllerAfterAction' => [
 			'Sharenjoy\Cmsharenjoy\Handlers\Events\ControllerAfterAction@handle',
 		],
