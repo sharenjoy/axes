@@ -1,0 +1,8 @@
+{
+  "name": "cmsharenjoy",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "~1.11.*",
+    "bootstrap-sass-official": "~3.3.*"
+  }
+}
