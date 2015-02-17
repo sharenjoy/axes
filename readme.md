@@ -2,4 +2,4 @@
 
 This package is still in dev so don't use it.
 
-composer create-project sharenjoy/cmsharenjoy --prefer-dist -s dev
+composer create-project sharenjoy/axes --prefer-dist -s dev
