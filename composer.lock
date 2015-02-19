@@ -767,12 +767,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5a4b2b37f41866c072eec28d3817f1a27063c401"
+                "reference": "1b205ae8ac897470f501b7d781057701eeb01ac1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5a4b2b37f41866c072eec28d3817f1a27063c401",
-                "reference": "5a4b2b37f41866c072eec28d3817f1a27063c401",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/1b205ae8ac897470f501b7d781057701eeb01ac1",
+                "reference": "1b205ae8ac897470f501b7d781057701eeb01ac1",
                 "shasum": ""
             },
             "require": {
@@ -884,7 +884,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-02-17 04:53:19"
+            "time": "2015-02-18 23:12:24"
         },
         {
             "name": "league/flysystem",
@@ -892,12 +892,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "853a71ad0d6c87ebf2ada3ab28e799a9640f9f91"
+                "reference": "d3887257d8f1944525c334f19da3c2841a7a9194"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/853a71ad0d6c87ebf2ada3ab28e799a9640f9f91",
-                "reference": "853a71ad0d6c87ebf2ada3ab28e799a9640f9f91",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/d3887257d8f1944525c334f19da3c2841a7a9194",
+                "reference": "d3887257d8f1944525c334f19da3c2841a7a9194",
                 "shasum": ""
             },
             "require": {
@@ -967,7 +967,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-02-15 18:02:18"
+            "time": "2015-02-18 09:40:42"
         },
         {
             "name": "monolog/monolog",
@@ -1330,12 +1330,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "7fd995d8b781efb7ff2d10a7ccb1c6cd8f9d6d5f"
+                "reference": "f23815bb7e5a7166947f3a0388b3ad0f4127714f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/7fd995d8b781efb7ff2d10a7ccb1c6cd8f9d6d5f",
-                "reference": "7fd995d8b781efb7ff2d10a7ccb1c6cd8f9d6d5f",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/f23815bb7e5a7166947f3a0388b3ad0f4127714f",
+                "reference": "f23815bb7e5a7166947f3a0388b3ad0f4127714f",
                 "shasum": ""
             },
             "require": {
@@ -1392,7 +1392,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2015-02-15 18:50:21"
+            "time": "2015-02-18 17:29:24"
         },
         {
             "name": "sharenjoy/cmsharenjoy",
@@ -1400,12 +1400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sharenjoy/cmsharenjoy.git",
-                "reference": "b537eb81c5e306c03df0fadad5a4a8a26404ccd9"
+                "reference": "ec8ad480b89057c364b4176447cec4979dac8113"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/b537eb81c5e306c03df0fadad5a4a8a26404ccd9",
-                "reference": "b537eb81c5e306c03df0fadad5a4a8a26404ccd9",
+                "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/ec8ad480b89057c364b4176447cec4979dac8113",
+                "reference": "ec8ad480b89057c364b4176447cec4979dac8113",
                 "shasum": ""
             },
             "require": {
@@ -1424,7 +1424,7 @@
                     "email": "ronald.jian@gmail.com"
                 }
             ],
-            "time": "2015-02-17 19:32:26"
+            "time": "2015-02-19 08:39:49"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2120,12 +2120,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "c3d5a36c3e3298bd8b070488fba5537174647353"
+                "reference": "9532aaaadf346b2ab79357661e3299b92092d914"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/c3d5a36c3e3298bd8b070488fba5537174647353",
-                "reference": "c3d5a36c3e3298bd8b070488fba5537174647353",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/9532aaaadf346b2ab79357661e3299b92092d914",
+                "reference": "9532aaaadf346b2ab79357661e3299b92092d914",
                 "shasum": ""
             },
             "require": {
@@ -2168,7 +2168,7 @@
                 "debug",
                 "dump"
             ],
-            "time": "2015-02-02 16:32:08"
+            "time": "2015-02-17 16:54:47"
         },
         {
             "name": "teepluss/theme",
@@ -2176,12 +2176,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/teepluss/laravel-theme.git",
-                "reference": "203516a1b6deff00790c28dcfff8786f898eaa6b"
+                "reference": "40f0915bf1448e02e4c0664f869766fe42db28b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/teepluss/laravel-theme/zipball/203516a1b6deff00790c28dcfff8786f898eaa6b",
-                "reference": "203516a1b6deff00790c28dcfff8786f898eaa6b",
+                "url": "https://api.github.com/repos/teepluss/laravel-theme/zipball/40f0915bf1448e02e4c0664f869766fe42db28b8",
+                "reference": "40f0915bf1448e02e4c0664f869766fe42db28b8",
                 "shasum": ""
             },
             "require": {
@@ -2190,12 +2190,12 @@
             },
             "type": "library",
             "autoload": {
+                "psr-4": {
+                    "Teepluss\\Theme\\": "src/"
+                },
                 "classmap": [
-                    "src/Teepluss/Theme/Exceptions.php"
-                ],
-                "psr-0": {
-                    "Teepluss\\Theme": "src/"
-                }
+                    "src/Exceptions.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2217,7 +2217,7 @@
                 "twig",
                 "widget"
             ],
-            "time": "2015-02-09 08:39:24"
+            "time": "2015-02-18 06:23:53"
         },
         {
             "name": "twig/twig",
@@ -2443,12 +2443,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "80c1424e6522a3303d320b611647fa6fbc29a8e4"
+                "reference": "74f58bbda974d0820183d228f120c2f3258bf7f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/80c1424e6522a3303d320b611647fa6fbc29a8e4",
-                "reference": "80c1424e6522a3303d320b611647fa6fbc29a8e4",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/74f58bbda974d0820183d228f120c2f3258bf7f6",
+                "reference": "74f58bbda974d0820183d228f120c2f3258bf7f6",
                 "shasum": ""
             },
             "require": {
@@ -2487,7 +2487,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2015-02-12 21:08:01"
+            "time": "2015-02-19 08:29:00"
         },
         {
             "name": "maximebf/debugbar",
