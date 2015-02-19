@@ -77,7 +77,7 @@
                                                     @elseif ($value->type == 'select')
                                                         {!!Form::select(
                                                             $value->key, 
-                                                            trans_options($value->key),
+                                                            trans_options('options.'.$value->key),
                                                             $value->value,
                                                             array('class'=>'form-control', 'data-id'=>$value->id)
                                                         )!!}
