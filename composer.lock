@@ -1330,12 +1330,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "f23815bb7e5a7166947f3a0388b3ad0f4127714f"
+                "reference": "c977172d8e52eed18b64168690b2ff3a96c91dc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/f23815bb7e5a7166947f3a0388b3ad0f4127714f",
-                "reference": "f23815bb7e5a7166947f3a0388b3ad0f4127714f",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/c977172d8e52eed18b64168690b2ff3a96c91dc4",
+                "reference": "c977172d8e52eed18b64168690b2ff3a96c91dc4",
                 "shasum": ""
             },
             "require": {
@@ -1392,7 +1392,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2015-02-18 17:29:24"
+            "time": "2015-02-19 17:15:51"
         },
         {
             "name": "sharenjoy/cmsharenjoy",
@@ -1400,12 +1400,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sharenjoy/cmsharenjoy.git",
-                "reference": "ec8ad480b89057c364b4176447cec4979dac8113"
+                "reference": "b3015f01bc90ef200ba0205b373f6241539856a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/ec8ad480b89057c364b4176447cec4979dac8113",
-                "reference": "ec8ad480b89057c364b4176447cec4979dac8113",
+                "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/b3015f01bc90ef200ba0205b373f6241539856a9",
+                "reference": "b3015f01bc90ef200ba0205b373f6241539856a9",
                 "shasum": ""
             },
             "require": {
@@ -1424,7 +1424,7 @@
                     "email": "ronald.jian@gmail.com"
                 }
             ],
-            "time": "2015-02-19 08:39:49"
+            "time": "2015-02-19 19:42:09"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2282,12 +2282,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "c5232d963bca31ab886fb40ab706d89f42769fcc"
+                "reference": "34baa83faf4b95825c045ff3e12dbb4d4a79c7aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/c5232d963bca31ab886fb40ab706d89f42769fcc",
-                "reference": "c5232d963bca31ab886fb40ab706d89f42769fcc",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/34baa83faf4b95825c045ff3e12dbb4d4a79c7aa",
+                "reference": "34baa83faf4b95825c045ff3e12dbb4d4a79c7aa",
                 "shasum": ""
             },
             "require": {
@@ -2325,7 +2325,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2015-01-30 14:58:26"
+            "time": "2015-02-19 18:50:16"
         }
     ],
     "packages-dev": [
@@ -2335,12 +2335,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "77b9cc071f4bbd839923269668b14d308778d8b0"
+                "reference": "7bdf8acf3b955f4fcf922e74abdfdec370369196"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/77b9cc071f4bbd839923269668b14d308778d8b0",
-                "reference": "77b9cc071f4bbd839923269668b14d308778d8b0",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/7bdf8acf3b955f4fcf922e74abdfdec370369196",
+                "reference": "7bdf8acf3b955f4fcf922e74abdfdec370369196",
                 "shasum": ""
             },
             "require": {
@@ -2381,7 +2381,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2015-02-15 14:11:42"
+            "time": "2015-02-19 10:26:39"
         },
         {
             "name": "doctrine/instantiator",
