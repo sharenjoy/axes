@@ -31,6 +31,8 @@ class Kernel extends HttpKernel {
 		// for backend cmsharenjoy
 		'admin.auth' => 'Sharenjoy\Cmsharenjoy\Http\Middleware\Authenticate',
 		'admin.guest' => 'Sharenjoy\Cmsharenjoy\Http\Middleware\RedirectIfAuthenticated',
+		'admin.switchPaginationCount' => 'Sharenjoy\Cmsharenjoy\Http\Middleware\SwitchPaginationCount',
+		'admin.setGoBackPrevious' => 'Sharenjoy\Cmsharenjoy\Http\Middleware\SetGoBackPrevious',
 	];
 
 }
