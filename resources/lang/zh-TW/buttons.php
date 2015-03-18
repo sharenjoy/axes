@@ -48,5 +48,6 @@ return [
     'open'           => '開啟',
     'confirm'        => '確認',
     'return'         => '返回',
-
+    'handle'         => '處理',
+    'trace'          => '追尋',
 ];
