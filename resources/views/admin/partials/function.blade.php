@@ -55,7 +55,7 @@
 
         @if(isset($filterForm) AND ! is_null($filterForm))
         <div class="panel-body filter-box">
-            {!!Form::open(array('url'=>$objectUrl, 'role'=>'form', 'method'=>'GET'))!!}
+            {!!Form::open(array('url'=>$objectUrl.'/'.$onAction, 'role'=>'form', 'method'=>'GET'))!!}
                 <div class="row">
 
                     {!!$filterForm!!}

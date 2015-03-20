@@ -36,6 +36,7 @@ return [
     'manage'                      => '管理',
     'list'                        => '清單',
     'create'                      => '建立',
+    'preview'                     => '預覽',
     'add'                         => '新增',
     'new'                         => '新增',
     'edit'                        => '編輯',
