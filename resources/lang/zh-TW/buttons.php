@@ -50,4 +50,6 @@ return [
     'return'         => '返回',
     'handle'         => '處理',
     'trace'          => '追尋',
+    'pick'           => '選取',
+    
 ];
