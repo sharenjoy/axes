@@ -1,6 +1,5 @@
 /vendor
 /node_modules
 /public/packages
-composer.lock
 Envoy.blade.php
 .env
