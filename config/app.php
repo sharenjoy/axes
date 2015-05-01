@@ -154,7 +154,7 @@ return [
 		'Sharenjoy\Cmsharenjoy\Providers\ModuleServiceProvider',
 		'Sharenjoy\Cmsharenjoy\Providers\FormakerServiceProvider',
 		'Sharenjoy\Cmsharenjoy\Providers\ListerServiceProvider',
-		'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider',
+		'Laracasts\Utilities\JavaScript\JavascriptServiceProvider',
 
 	],
 
