@@ -18,8 +18,9 @@ elixir(function(mix) {
     mix.styles([
         "resources/assets/vendor/bootstrap/dist/css/bootstrap.css",
         "resources/assets/vendor/fontawesome/css/font-awesome.css",
+        "public/css/app.css"
     ], "public/css/all.css", "./");
 
-    mix.version(["css/all.css", "css/app.css"]);
+    mix.version(["css/all.css"]);
 
 });
