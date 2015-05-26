@@ -20,7 +20,7 @@ class ModuleServiceProvider extends ServiceProvider {
     public function register()
     {
         // The News Binding
-        // $this->app->singleton('App\Modules\News\NewsInterface', function()
+        // $this->app->bind('App\Modules\News\NewsInterface', function()
         // {
         //     return new \App\Modules\News\NewsRepository(new \App\Modules\News\News, new \App\Modules\News\NewsValidator);
         // });
