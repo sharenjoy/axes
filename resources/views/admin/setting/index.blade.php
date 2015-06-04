@@ -109,7 +109,7 @@
                                                     @endif
                                                 </div>
                                                 <div class="col-sm-7 col-md-7">
-                                                    <span class="help-block">{{pick_trans('setting.description.'.$value->key)}}</span>
+                                                    <span class="help-block">{!!pick_trans('setting.description.'.$value->key)!!}</span>
                                                 </div>
                                             </div>
                                             @endforeach
