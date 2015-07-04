@@ -13,7 +13,7 @@
         "laravel/framework": "5.0.*",
         "illuminate/html": "~5.0",
         "sharenjoy/cmsharenjoy": "dev-master",
-        "guzzlehttp/guzzle": "~4.0",
+        "guzzlehttp/guzzle": "~5.0",
         "pda/pheanstalk": "~3.0",
         "predis/predis": "~1.0",
         "intervention/image": "2.*",
@@ -58,5 +58,5 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
