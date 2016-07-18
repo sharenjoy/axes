@@ -3,29 +3,26 @@
     "description": "This is cms",
     "license": "MIT",
     "type": "project",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/BootstrapCMS/sentry"
-        }
-    ],
     "require": {
-        "laravel/framework": "5.0.*",
-        "illuminate/html": "~5.0",
+        "php": ">=5.5.9",
+        "laravel/framework": "5.2.*",
         "sharenjoy/cmsharenjoy": "dev-master",
-        "guzzlehttp/guzzle": "~5.0",
-        "pda/pheanstalk": "~3.0",
+        "laravelcollective/html": "5.2.*",
         "predis/predis": "~1.0",
+        "pda/pheanstalk": "~3.0",
+        "doctrine/dbal": "^2.5",
+        "guzzlehttp/guzzle": "~5.3|~6.0",
         "intervention/image": "2.*",
-        "cartalyst/sentry": "~3.0",
         "teepluss/theme": "dev-master",
         "laracasts/utilities": "~2.0"
     },
     "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~4.0",
-        "phpspec/phpspec": "~2.1",
-        "barryvdh/laravel-debugbar": "~2.0",
-        "fzaninotto/faker": "1.*"
+        "symfony/css-selector": "2.8.*|3.0.*",
+        "symfony/dom-crawler": "2.8.*|3.0.*",
+        "barryvdh/laravel-debugbar": "~2.0"
     },
     "autoload": {
         "classmap": [
@@ -41,22 +38,22 @@
         ]
     },
     "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
         "post-install-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize"
         ],
         "post-update-cmd": [
-            "php artisan clear-compiled",
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
-        ],
-        "post-create-project-cmd": [
-            "php -r \"copy('.env.example', '.env');\"",
-            "php -r \"copy('Envoy.blade.php.example', 'Envoy.blade.php');\"",
-            "php artisan key:generate"
         ]
     },
     "config": {
         "preferred-install": "dist"
-    },
-    "minimum-stability": "stable"
+    }
 }

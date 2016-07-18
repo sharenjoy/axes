@@ -1,0 +1,19 @@
+{
+    "name": "sharenjoy/cmsharenjoy",
+    "description": "",
+    "authors": [
+        {
+            "name": "Ronald Jian",
+            "email": "ronald.jian@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "~5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sharenjoy\\Cmsharenjoy\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

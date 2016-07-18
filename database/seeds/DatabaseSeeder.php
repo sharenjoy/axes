@@ -1,23 +1,25 @@
 <?php
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Seeder;
+use Sharenjoy\Cmsharenjoy\Seeds\UserTable;
+use Sharenjoy\Cmsharenjoy\Seeds\SettingsSeeder;
+use Sharenjoy\Cmsharenjoy\Seeds\FileFoldersSeeder;
 
-class DatabaseSeeder extends Seeder {
-
+class DatabaseSeeder extends Seeder
+{
     /**
-     * Run the database seeding.
+     * Run the database seeds.
      *
      * @return void
      */
     public function run()
     {
         Eloquent::unguard();
-        $this->call('Sharenjoy\Cmsharenjoy\Seeds\UserTable');
-        $this->call('Sharenjoy\Cmsharenjoy\Seeds\SettingsSeeder');
-        $this->call('Sharenjoy\Cmsharenjoy\Seeds\FileFoldersSeeder');
+
+        $this->call(UserTable::class);
+        $this->call(SettingsSeeder::class);
+        $this->call(FileFoldersSeeder::class);
         
         $this->command->info('All Tables Seeded');
     }
-
 }

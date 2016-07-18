@@ -1,6 +1,6 @@
-/vendor
 /node_modules
+/public/storage
 /public/packages
-composer.lock
-Envoy.blade.php
+Homestead.yaml
+Homestead.json
 .env
