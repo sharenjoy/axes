@@ -27,7 +27,7 @@
           </div> -->
         </div>
             
-        <div class="panel-body">
+        <div class="panel-body" id="clone-section">
           <div class="tab-content">
             
             <div class="tab-pane active" id="profile-1">
