@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "579b3b22fbe31e068fc079eb26a4a435",
-    "content-hash": "fb590abf81228400e5d1a39864432616",
+    "hash": "0b9cc4ddfa01de82bcd774728679e428",
+    "content-hash": "1003c1e0cdbd90f9c8899ee2b9acb0da",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1784,12 +1784,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sharenjoy/cmsharenjoy.git",
-                "reference": "131103ceccf8e92e2c05268127ff65a8e85d254f"
+                "reference": "c14a32aa8aaf19a797097ffd5dd09b0231af8979"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/131103ceccf8e92e2c05268127ff65a8e85d254f",
-                "reference": "131103ceccf8e92e2c05268127ff65a8e85d254f",
+                "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/c14a32aa8aaf19a797097ffd5dd09b0231af8979",
+                "reference": "c14a32aa8aaf19a797097ffd5dd09b0231af8979",
                 "shasum": ""
             },
             "require": {
@@ -1808,7 +1808,7 @@
                     "email": "ronald.jian@gmail.com"
                 }
             ],
-            "time": "2016-07-07 12:44:12"
+            "time": "2016-08-02 22:02:27"
         },
         {
             "name": "swiftmailer/swiftmailer",

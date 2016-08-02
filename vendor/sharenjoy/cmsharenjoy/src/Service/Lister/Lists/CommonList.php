@@ -6,13 +6,18 @@ class CommonList extends ListAbstract implements ListInterface {
     {
         $content = '<td align="'.$config['align'].'" width="'.$config['width'].'">';
 
-        if (isset($config['relations']))
-        {
+        if (isset($config['relations'])) {
             $content .= array_get($item->toArray(), $config['relations']);
-        }
-        else
-        {
-            $content .= $item[$column];
+        } else {
+            if (isset($config['lists']) && session()->has('allLists.'.$config['lists'])) {
+                if ($item[$column]) {
+                    $content .= array_get(session()->get('allLists.'.$config['lists']), $item[$column]);
+                } else {
+                    $content .= '-';
+                }
+            } else {
+                $content .= $item[$column];
+            }
         }
 
         $content .= '</td>';

@@ -4,6 +4,24 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Usage
+    |--------------------------------------------------------------------------
+    |
+    | protected $listConfig = [
+    |    'title'        => ['name'=>'merit_title',         'align'=>'',       'width'=>''],
+    |    'sn'           => ['name'=>'merit_sn',            'align'=>'',       'width'=>''],
+    |    'price'        => ['name'=>'merit_price',         'align'=>'right',  'width'=>'200'],
+    |    'head'         => ['name'=>'merit_head',          'align'=>'center', 'width'=>'80',  'type'=>'head'],
+    |    'table_number' => ['name'=>'merit_table_number',  'align'=>'right',  'width'=>'80',  'relactions' => 'users.name'],
+    |    'type_visible' => ['name'=>'merit_type_visible',  'align'=>'center', 'width'=>'120', 'lists' => 'merit.typevisible'],
+    |    'img'          => ['name'=>'image',               'align'=>'center', 'width'=>'180', 'imageWidth' => '160'],
+    |    'updated_at'   => ['name'=>'updated',             'align'=>'center', 'width'=>'180'],
+    | ];
+    |
+    */
+
+    /*
+    |--------------------------------------------------------------------------
     | Driver
     |--------------------------------------------------------------------------
     |

@@ -14,8 +14,7 @@ class AddColumnsToUserTable extends Migration {
 	{
 		Schema::table('users', function($table)
 		{
-		    $table->string('name')->after('password');
-		    $table->string('phone')->after('name');
+		    $table->string('phone')->after('password');
 		    $table->string('avatar')->after('phone');
 		    $table->text('description')->after('avatar');
 		});
@@ -30,7 +29,6 @@ class AddColumnsToUserTable extends Migration {
 	{
 		Schema::table('users', function($table)
 		{
-		    $table->dropColumn('name');
 		    $table->dropColumn('phone');
 		    $table->dropColumn('avatar');
 		    $table->dropColumn('description');
