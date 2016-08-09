@@ -1,11 +1,13 @@
-<?php namespace Sharenjoy\Cmsharenjoy\User;
+<?php
 
+namespace Sharenjoy\Cmsharenjoy\User;
+
+use Auth, Mail, Config, Message, Session;
 use Sharenjoy\Cmsharenjoy\Core\EloquentBaseRepository;
 use Sharenjoy\Cmsharenjoy\Service\Validation\ValidableInterface;
-use Auth, Mail, Config, Message, Session;
 
-class UserRepository extends EloquentBaseRepository implements UserInterface {
-
+class UserRepository extends EloquentBaseRepository implements UserInterface
+{
     public function __construct(User $model, ValidableInterface $validator)
     {
         $this->validator = $validator;
@@ -16,22 +18,18 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
     {   
         try
         {
-            $input = $this->getInput();
+            $user = $this->model;
 
-            $user = Sentry::createUser(array(
-                'email'       => $input['email'],
-                'password'    => $input['password'],
-                'name'        => $input['name'],
-                'phone'       => $input['phone'],
-                'avatar'      => $input['avatar'],
-                'description' => $input['description'],
-                // 'permissions' => $permissions
-            ));
+            $inputs = $this->getInput();
+            $inputs['password'] = bcrypt($inputs['password']);
+
+            $user->fill($inputs);
+            $user->save();
 
             // activate user
             $activationCode = $user->getActivationCode();
 
-            if (true)
+            if (config('cmsharenjoy.autoActivable'))
             {
                 $user->attemptActivation($activationCode);
             }
@@ -48,28 +46,23 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
                 {
                     $message->from(Config::get('mail.from.address'), Config::get('mail.from.name'))
                             ->subject('Account activation');
-                    $message->to($user->getLogin());
+                    $message->to($user->email);
                 });
             }
         }
-        catch (\Cartalyst\Sentry\Users\LoginRequiredException $e)
+        catch (\Sharenjoy\Cmsharenjoy\User\LoginRequiredException $e)
         {
             Message::error('Login field is required.');
             return false;
         }
-        catch (\Cartalyst\Sentry\Users\PasswordRequiredException $e)
+        catch (\Sharenjoy\Cmsharenjoy\User\PasswordRequiredException $e)
         {
             Message::error('Password field is required.');
             return false;
         }
-        catch (\Cartalyst\Sentry\Users\UserExistsException $e)
+        catch (\Sharenjoy\Cmsharenjoy\User\UserExistsException $e)
         {
             Message::error('User with this login already exists.');
-            return false;
-        }
-        catch (\Cartalyst\Sentry\Groups\GroupNotFoundException $e)
-        {
-            Message::error('Group was not found.');
             return false;
         }
 
@@ -83,7 +76,7 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
             $input = $this->getInput();
 
             // Find the user using the user id
-            $user = Sentry::findUserById($id);
+            $user = $this->model->find($id);
 
             // Update the user details
             $user->email       = $input['email'];
@@ -101,12 +94,12 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
                 return false;
             }            
         }
-        catch (Cartalyst\Sentry\Users\UserExistsException $e)
+        catch (Sharenjoy\Cmsharenjoy\User\UserExistsException $e)
         {
             Message::error('User with this login already exists.');
             return false;
         }
-        catch (Cartalyst\Sentry\Users\UserNotFoundException $e)
+        catch (Sharenjoy\Cmsharenjoy\User\UserNotFoundException $e)
         {
             Message::error('User was not found.');
             return false;
@@ -120,7 +113,7 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
         try
         {
             // Find the user using the user id
-            $user = Sentry::findUserById($id);
+            $user = $this->model->find($id);
 
             // Attempt to activate the user
             if ($user->attemptActivation($code))
@@ -132,11 +125,11 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
                 return ['status'=>'error', 'message'=>pick_trans('error_active')];
             }
         }
-        catch (\Cartalyst\Sentry\Users\UserNotFoundException $e)
+        catch (\Sharenjoy\Cmsharenjoy\User\UserNotFoundException $e)
         {
             return ['status'=>'error', 'message'=>pick_trans('user_not_found')];
         }
-        catch (\Cartalyst\Sentry\Users\UserAlreadyActivatedException $e)
+        catch (\Sharenjoy\Cmsharenjoy\User\UserAlreadyActivatedException $e)
         {
             return ['status'=>'warning', 'message'=>pick_trans('user_already_actived')];
         }
@@ -148,11 +141,11 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
         {
             if (is_numeric($var))
             {
-                $user = Sentry::findUserById($var);
+                $user = $this->model->find($var);
             }
             elseif (is_string($var))
             {
-                $user = Sentry::findUserByLogin($var);
+                $user = $this->model->findByLogin($var);
             }
 
             // Get the password reset code
@@ -172,7 +165,7 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
                 $message->to($user->email);
             });
         }
-        catch (\Cartalyst\Sentry\Users\UserNotFoundException $e)
+        catch (\Sharenjoy\Cmsharenjoy\User\UserNotFoundException $e)
         {
             return ['status'=>false, 'message'=>pick_trans('user_not_found')];
         }
@@ -185,7 +178,7 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
         try
         {
             // Find the user using the user id
-            $user = Sentry::findUserByResetPasswordCode($input['code']);
+            $user = $this->model->findByResetPasswordCode($input['code']);
 
             if ($input['email'] !== $user->email)
             {
@@ -203,7 +196,7 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
                 // Attempt to reset the user password
                 if ($user->attemptResetPassword($input['code'], $input['password']))
                 {
-                    Sentry::logout();
+                    Auth::logout();
                     return ['status'=>true, 'message'=>pick_trans('password_reset_success')];
                 }
                 else
@@ -216,7 +209,7 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
                 return Message::result(false, pick_trans('password_reset_code_invalid'));
             }
         }
-        catch (\Cartalyst\Sentry\Users\UserNotFoundException $e)
+        catch (\Sharenjoy\Cmsharenjoy\User\UserNotFoundException $e)
         {
             return ['status'=>false, 'message'=>pick_trans('user_not_found')];
         }
@@ -230,6 +223,11 @@ class UserRepository extends EloquentBaseRepository implements UserInterface {
         );
 
         if (Auth::attempt($credentials)) {
+            if (Auth::user()->activated == false) {
+                Auth::logout();
+                return ['status'=>false, 'message'=>pick_trans('invalid_email_password')];
+            }
+
             return ['status'=>true, 'message'=>pick_trans('success_login')];
         } else {
             return ['status'=>false, 'message'=>pick_trans('invalid_email_password')];

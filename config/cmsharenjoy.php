@@ -103,4 +103,6 @@ return [
         'phone'         => '0939999999',
     ],
 
+    'autoActivable' => true,
+
 ];

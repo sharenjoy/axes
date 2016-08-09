@@ -1,13 +1,15 @@
 <?php namespace Sharenjoy\Cmsharenjoy\User;
 
-use Sharenjoy\Cmsharenjoy\Core\Traits\CommonModelTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Sharenjoy\Cmsharenjoy\Core\Traits\CommonModelTrait;
+use Sharenjoy\Cmsharenjoy\User\ActivableRemindableResetable;
 
-class User extends Authenticatable {
-
+class User extends Authenticatable
+{
     use CommonModelTrait;
+    use ActivableRemindableResetable;
 
-    protected $table  = 'users';
+    protected $table = 'users';
 
     protected $fillable = [
         'email',
@@ -32,7 +34,12 @@ class User extends Authenticatable {
         'description'           => ['order' => '60'],
     ];
 
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'reset_password_code',
+        'activation_code'
+    ];
 
     public function listQuery()
     {

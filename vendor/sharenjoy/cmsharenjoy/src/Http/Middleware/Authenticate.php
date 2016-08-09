@@ -15,10 +15,11 @@ class Authenticate
 	 */
 	public function handle($request, Closure $next)
 	{
-		if (! Auth::check()) {
+		if (! Auth::check() || Auth::user()->activated == false) {
 			if ($request->ajax()) {
 				return response('Unauthorized.', 401);
 			} else {
+				Auth::logout();
 				return redirect()->guest($request->session()->get('accessUrl').'/login');
 			}
 		}
