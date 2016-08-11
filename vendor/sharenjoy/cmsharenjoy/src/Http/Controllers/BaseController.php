@@ -2,6 +2,8 @@
 
 namespace Sharenjoy\Cmsharenjoy\Http\Controllers;
 
+use Route, Request, Theme;
+use Message, Setting, Auth;
 use Illuminate\Support\Str;
 use Illuminate\Routing\Controller;
 use Sharenjoy\Cmsharenjoy\User\User;
@@ -10,7 +12,7 @@ use Illuminate\Console\AppNamespaceDetectorTrait;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
-use Route, Request, Theme, Message, Setting, Auth;
+use Sharenjoy\Cmsharenjoy\Exception\ViewNotFoundException;
 
 abstract class BaseController extends Controller
 {
@@ -316,7 +318,8 @@ abstract class BaseController extends Controller
         {
             return view($this->accessUrl.'.'.$pathB);
         }
-        
+
+        throw new ViewNotFoundException("The view can not be found. \$action: {$action} \$onMethod: {$this->onMethod}");
     }
 
 }
