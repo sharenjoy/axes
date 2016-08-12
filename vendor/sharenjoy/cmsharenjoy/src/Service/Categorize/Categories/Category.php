@@ -1,9 +1,9 @@
 <?php namespace Sharenjoy\Cmsharenjoy\Service\Categorize\Categories;
 
+use App\Modules\Category\ConfigTrait;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Sharenjoy\Cmsharenjoy\Core\EloquentBaseModel;
 use Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\CategoryInterface;
-use Sharenjoy\Cmsharenjoy\Modules\Category\ConfigTrait;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends EloquentBaseModel implements CategoryInterface {
 

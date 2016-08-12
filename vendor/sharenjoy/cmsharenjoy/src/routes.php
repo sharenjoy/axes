@@ -14,9 +14,6 @@ Route::group(['middleware' => ['web']], function () use ($accessUrl) {
     
     // Backend
     Route::group(['prefix' => $accessUrl], function() {
-        Route::controller('post'      , 'Sharenjoy\Cmsharenjoy\Modules\Post\PostController');
-        Route::controller('tag'       , 'Sharenjoy\Cmsharenjoy\Modules\Tag\TagController');
-        Route::controller('category'  , 'Sharenjoy\Cmsharenjoy\Modules\Category\CategoryController');
         Route::controller('filer'     , 'Sharenjoy\Cmsharenjoy\Filer\FilerController');
         Route::controller('user'      , 'Sharenjoy\Cmsharenjoy\User\UserController');
         Route::controller('setting'   , 'Sharenjoy\Cmsharenjoy\Setting\SettingController');
