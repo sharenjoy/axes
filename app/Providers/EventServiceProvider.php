@@ -16,6 +16,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SomeEvent' => [
             'App\Listeners\EventListener',
         ],
+        'controllerAfterAction' => [
+            'Sharenjoy\Cmsharenjoy\Handlers\Events\ControllerAfterAction@handle',
+        ],
     ];
 
     /**
