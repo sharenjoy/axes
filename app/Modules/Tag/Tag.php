@@ -22,7 +22,7 @@ class Tag extends EloquentBaseModel
 
     public $formConfig = [
         'tag'          => ['type'  => 'text', 'order' => '10'],
-        'count'        => ['type'  => 'text', 'order' => '20']
+        'count'        => ['type'  => 'text', 'order' => '20', 'value' => 0],
     ];
 
     public function listQuery()

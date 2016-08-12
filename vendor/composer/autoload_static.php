@@ -3505,7 +3505,6 @@ class ComposerStaticInit2c6c00b0d99d385951a38f469e154c31
         'Sharenjoy\\Cmsharenjoy\\Seeds\\FileFoldersSeeder' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Seeds/FileFoldersSeeder.php',
         'Sharenjoy\\Cmsharenjoy\\Seeds\\SettingsSeeder' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Seeds/SettingsSeeder.php',
         'Sharenjoy\\Cmsharenjoy\\Seeds\\UserTable' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Seeds/UserTable.php',
-        'Sharenjoy\\Cmsharenjoy\\Service\\Categorize\\Categories\\Category' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Categorize/Categories/Category.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Categorize\\Categories\\CategoryInterface' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Categorize/Categories/CategoryInterface.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Categorize\\Categories\\Provider' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Categorize/Categories/Provider.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Categorize\\Categories\\ProviderInterface' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Categorize/Categories/ProviderInterface.php',

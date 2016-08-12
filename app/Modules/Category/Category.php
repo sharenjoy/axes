@@ -1,13 +1,13 @@
-<?php namespace Sharenjoy\Cmsharenjoy\Service\Categorize\Categories;
+<?php
 
-use App\Modules\Category\ConfigTrait;
+namespace App\Modules\Category;
+
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Sharenjoy\Cmsharenjoy\Core\EloquentBaseModel;
 use Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\CategoryInterface;
 
-class Category extends EloquentBaseModel implements CategoryInterface {
-
-    use ConfigTrait;
+class Category extends EloquentBaseModel implements CategoryInterface
+{
     use SoftDeletes;
 
     protected $table = 'categories';
@@ -18,6 +18,19 @@ class Category extends EloquentBaseModel implements CategoryInterface {
         'title',
         'slug',
         'description'
+    ];
+
+    protected $eventItem = [
+        'creating'    => ['user_id'],
+        'updating'    => ['user_id'],
+    ];
+
+    public $filterFormConfig = [];
+
+    public $formConfig = [
+        'title'       => ['order' => '20'],
+        'slug'        => ['order' => '30'],
+        'description' => ['order' => '40'],
     ];
 
     protected $dates = ['deleted_at'];
@@ -60,7 +73,7 @@ class Category extends EloquentBaseModel implements CategoryInterface {
      */
     public function parents()
     {
-        return $this->belongsToMany('\Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\Category', 'category_hierarchy', 'category_id', 'category_parent_id');
+        return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_id', 'category_parent_id');
     }
 
     /**
@@ -70,7 +83,7 @@ class Category extends EloquentBaseModel implements CategoryInterface {
      */
     public function children()
     {
-        return $this->belongsToMany('\Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\Category', 'category_hierarchy', 'category_parent_id', 'category_id');
+        return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_parent_id', 'category_id');
     }
 
     /**

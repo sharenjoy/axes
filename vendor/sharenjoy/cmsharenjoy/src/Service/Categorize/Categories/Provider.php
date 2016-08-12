@@ -9,7 +9,7 @@ class Provider implements ProviderInterface {
      *
      * @var string
      */
-    protected $model = 'Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\Category';
+    protected $model;
 
     /**
      * Constructor.

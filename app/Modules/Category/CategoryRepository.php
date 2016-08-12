@@ -5,7 +5,6 @@ namespace App\Modules\Category;
 use Message;
 use Sharenjoy\Cmsharenjoy\Core\EloquentBaseRepository;
 use Sharenjoy\Cmsharenjoy\Service\Validation\ValidableInterface;
-use Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\Category;
 
 class CategoryRepository extends EloquentBaseRepository implements CategoryInterface
 {

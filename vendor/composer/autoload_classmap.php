@@ -3134,7 +3134,6 @@ return array(
     'Sharenjoy\\Cmsharenjoy\\Seeds\\FileFoldersSeeder' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Seeds/FileFoldersSeeder.php',
     'Sharenjoy\\Cmsharenjoy\\Seeds\\SettingsSeeder' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Seeds/SettingsSeeder.php',
     'Sharenjoy\\Cmsharenjoy\\Seeds\\UserTable' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Seeds/UserTable.php',
-    'Sharenjoy\\Cmsharenjoy\\Service\\Categorize\\Categories\\Category' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Categorize/Categories/Category.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Categorize\\Categories\\CategoryInterface' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Categorize/Categories/CategoryInterface.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Categorize\\Categories\\Provider' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Categorize/Categories/Provider.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Categorize\\Categories\\ProviderInterface' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Categorize/Categories/ProviderInterface.php',

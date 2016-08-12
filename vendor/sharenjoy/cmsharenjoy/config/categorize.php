@@ -14,7 +14,7 @@ return [
 
     'categories' => [
 
-        'model' => 'Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\Category',
+        'model' => 'App\Modules\Category\Category',
     ],
 
     /*

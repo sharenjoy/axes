@@ -43,7 +43,7 @@ class Relate extends Model implements RelateInterface {
      */
     public function category()
     {
-        return $this->belongsTo('\Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\Category');
+        return $this->belongsTo(config('categorize.categories.model'));
     }
 
 }
