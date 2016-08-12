@@ -168,10 +168,9 @@ return [
         Teepluss\Theme\ThemeServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Sharenjoy\Cmsharenjoy\Providers\CmsharenjoyServiceProvider::class,
-        Sharenjoy\Cmsharenjoy\Providers\ModuleServiceProvider::class,
         Sharenjoy\Cmsharenjoy\Providers\FormakerServiceProvider::class,
         Sharenjoy\Cmsharenjoy\Providers\ListerServiceProvider::class,
-        Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
+        // Laracasts\Utilities\JavaScript\JavascriptServiceProvider::class,
 
     ],
 

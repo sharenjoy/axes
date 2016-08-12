@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * For the backend
+ */
+Route::group(['prefix' => 'admin'], function()
+{
+    Route::controller('post'      , 'App\Modules\Post\PostController');
+    Route::controller('tag'       , 'App\Modules\Tag\TagController');
+    Route::controller('category'  , 'App\Modules\Category\CategoryController');
+});

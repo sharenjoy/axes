@@ -2,8 +2,21 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use App\Modules\Tag\Tag;
+use App\Modules\Post\Post;
+use App\Modules\Tag\TagValidator;
+use App\Modules\Tag\TagRepository;
+use App\Modules\Post\PostValidator;
+use App\Modules\Post\PostRepository;
 use Illuminate\Foundation\AliasLoader;
+use Illuminate\Support\ServiceProvider;
+use App\Modules\Category\CategoryValidator;
+use App\Modules\Category\CategoryRepository;
+use Sharenjoy\Cmsharenjoy\Service\Categorize\Categorize;
+use Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\Category;
+use Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\Provider as CategoryProvider;
+use Sharenjoy\Cmsharenjoy\Service\Categorize\CategoryRelates\Provider as CategoryRelateProvider;
+use Sharenjoy\Cmsharenjoy\Service\Categorize\CategoryHierarchy\Provider as CategoryHierarchyProvider;
 
 class ModuleServiceProvider extends ServiceProvider
 {
@@ -21,12 +34,82 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // The News Binding
-        // $this->app->bind('App\Modules\News\NewsInterface', function()
-        // {
-        //     return new \App\Modules\News\NewsRepository(new \App\Modules\News\News, new \App\Modules\News\NewsValidator);
-        // });
+        // The Post Binding
+        $this->app->bind('App\Modules\Post\PostInterface', function()
+        {
+            return new PostRepository(new Post, new PostValidator);
+        });
 
+        // The Tag Binding
+        $this->app->bind('App\Modules\Tag\TagInterface', function()
+        {
+            return new TagRepository(new Tag, new TagValidator);
+        });
+
+        // The Category Binding
+        $this->app->bind('App\Modules\Category\CategoryInterface', function()
+        {
+            return new CategoryRepository(new Category, new CategoryValidator);
+        });
+
+        $this->registerCategoryProvider();
+        $this->registerCategoryRelateProvider();
+        $this->registerCategoryHierarchyProvider();
+
+        $this->app['categorize'] = $this->app->share(function($app)
+        {
+            return new Categorize(
+                $app['config'],
+                $app['categorize.category'],
+                $app['categorize.categoryRelate'],
+                $app['categorize.categoryHierarchy']
+            );
+        });
+    }
+
+    /**
+     * Register category provider.
+     *
+     * @return \CategoryProvider
+     */
+    protected function registerCategoryProvider()
+    {
+        $this->app['categorize.category'] = $this->app->share(function($app)
+        {
+            $model = $app['config']->get('categorize.categories.model');
+
+            return new CategoryProvider($model);
+        });
+    }
+
+    /**
+     * Register category hierarchy provider.
+     *
+     * @return \CategoryHierarchyProvider
+     */
+    protected function registerCategoryHierarchyProvider()
+    {
+        $this->app['categorize.categoryHierarchy'] = $this->app->share(function($app)
+        {
+            $model = $app['config']->get('categorize.categoryHierarchy.model');
+
+            return new CategoryHierarchyProvider($model);
+        });
+    }
+
+    /**
+     * Register category relate provider.
+     *
+     * @return \CategoryHierarchyProvider
+     */
+    protected function registerCategoryRelateProvider()
+    {
+        $this->app['categorize.categoryRelate'] = $this->app->share(function($app)
+        {
+            $model = $app['config']->get('categorize.categoryRelates.model');
+
+            return new CategoryRelateProvider($model);
+        });
     }
 
     /**
@@ -37,7 +120,7 @@ class ModuleServiceProvider extends ServiceProvider
     public function boot()
     {
         // Auto create app alias with boot method.
-        // AliasLoader::getInstance()->alias('Categorize', 'App\Service\Categorize\Facades\Categorize');
+        AliasLoader::getInstance()->alias('Categorize', 'Sharenjoy\Cmsharenjoy\Service\Categorize\Facades\Categorize');
     }
 
 }
