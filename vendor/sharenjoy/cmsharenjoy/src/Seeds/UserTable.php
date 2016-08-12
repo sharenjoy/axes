@@ -16,6 +16,8 @@ class UserTable extends Seeder {
                 'password'      => Hash::make(Config::get('cmsharenjoy.administrator.password')),
                 'name'          => Config::get('cmsharenjoy.administrator.name'),
                 'phone'         => Config::get('cmsharenjoy.administrator.phone'),
+                'activated'     => true,
+                'activated_at'  => date('Y-m-d H:i:s'),
                 'created_at'    => date('Y-m-d H:i:s'),
                 'updated_at'    => date('Y-m-d H:i:s')
             ]
