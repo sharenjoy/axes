@@ -8,7 +8,7 @@ class LabelList extends ListAbstract implements ListInterface {
         
         if (isset($config['relation']))
         {
-            foreach ($item->$config['relation'] as $value)
+            foreach ($item->{$config['relation']} as $value)
             {
                 $content .= '<div class="label label-secondary">'.$value[$column].'</div>';
             }
@@ -24,4 +24,3 @@ class LabelList extends ListAbstract implements ListInterface {
     }
 
 }
-

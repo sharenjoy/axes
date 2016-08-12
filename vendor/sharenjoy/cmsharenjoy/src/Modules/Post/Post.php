@@ -1,15 +1,16 @@
-<?php namespace Sharenjoy\Cmsharenjoy\Modules\Post;
+<?php
 
+namespace Sharenjoy\Cmsharenjoy\Modules\Post;
+
+use Sharenjoy\Cmsharenjoy\Filer\AlbumTrait;
 use Sharenjoy\Cmsharenjoy\Core\EloquentBaseModel;
 use Sharenjoy\Cmsharenjoy\Modules\Tag\TaggableTrait;
-use Sharenjoy\Cmsharenjoy\Filer\AlbumTrait;
 
-class Post extends EloquentBaseModel {
+class Post extends EloquentBaseModel
+{
+    use AlbumTrait, TaggableTrait;
 
-    use TaggableTrait;
-    use AlbumTrait;
-
-    protected $table    = 'posts';
+    protected $table = 'posts';
 
     protected $fillable = [
         'user_id',
@@ -42,7 +43,7 @@ class Post extends EloquentBaseModel {
     public function fieldTags($id)
     {
         $content['value'] = $id != '' ? $this->find($id)->tags->implode('id', ',') : '';
-        $content['option'] = $this->grabTagLists();
+        $content['option'] = $this->grabTagLists()->toArray();
 
         return $content;
     }

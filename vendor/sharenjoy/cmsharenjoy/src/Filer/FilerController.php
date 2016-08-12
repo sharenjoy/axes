@@ -155,6 +155,8 @@ class FilerController extends BaseController {
 
     public function getFilealbum($parentId = null)
     {
+        \Debugbar::disable();
+        
         $fileResult = $this->foldercontents($parentId);
         if ( ! $fileResult['status'])
         {
