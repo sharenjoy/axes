@@ -45,6 +45,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        if ($e instanceof TokenMismatchException && $request->fullUrl() == env('APP_URL').'/admin/login'){
+            Message::warning(pick_trans('login_csrf_token_failed'));
+            return redirect($request->fullUrl());
+        }
+
         return parent::render($request, $e);
     }
 }
