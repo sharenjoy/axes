@@ -49,6 +49,7 @@ return array(
             $theme->asset()->add('neon-theme'   , $pkg.'css/neon-theme.css');
             $theme->asset()->add('neon-forms'   , $pkg.'css/neon-forms.css');
             $theme->asset()->add('white'        , $pkg.'css/skins/white.css');
+            $theme->asset()->add('animate'      , $pkg.'css/animate.min.css');
             $theme->asset()->add('custom-css'   , $pkg.'css/sharenjoy/custom.css');
 
             // Javascript
@@ -61,8 +62,8 @@ return array(
             $theme->asset()->add('neon-api'    , $pkg.'js/neon-api.js');
             $theme->asset()->add('toastr'      , $pkg.'js/toastr.js');
             $theme->asset()->add('neon-custom' , $pkg.'js/neon-custom.js');
-            $theme->asset()->add('reactjs'     , $pkg.'js/react/react.min.js');
-            $theme->asset()->add('reactjs-jsx' , $pkg.'js/react/JSXTransformer.js');
+            $theme->asset()->add('vue-js'      , $pkg.'js/vue/1.0.26/vue.js');
+            // $theme->asset()->add('vue-js'      , $pkg.'js/vue/1.0.26/vue.min.js');
             $theme->asset()->add('custom-js'   , $pkg.'js/sharenjoy/custom.js');
 
             // Breadcrumb template.
