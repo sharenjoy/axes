@@ -42,7 +42,7 @@
     <body class="page-body skin-white">
         
         <!-- page-container Starts -->
-        <div class="page-container">
+        <div class="page-container" id="vue-app">
         <!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
             
             <!-- sidebar-menu Starts -->
