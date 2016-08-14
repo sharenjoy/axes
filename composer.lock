@@ -1784,12 +1784,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sharenjoy/cmsharenjoy.git",
-                "reference": "bbd6f7ddcdc1a8172b738e31542857409711e8d9"
+                "reference": "3f7f1126ca5bcc91a730a9138d290fb3c3436e0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/bbd6f7ddcdc1a8172b738e31542857409711e8d9",
-                "reference": "bbd6f7ddcdc1a8172b738e31542857409711e8d9",
+                "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/3f7f1126ca5bcc91a730a9138d290fb3c3436e0d",
+                "reference": "3f7f1126ca5bcc91a730a9138d290fb3c3436e0d",
                 "shasum": ""
             },
             "require": {
@@ -1808,7 +1808,7 @@
                     "email": "ronald.jian@gmail.com"
                 }
             ],
-            "time": "2016-08-12 22:17:38"
+            "time": "2016-08-14 19:25:40"
         },
         {
             "name": "swiftmailer/swiftmailer",

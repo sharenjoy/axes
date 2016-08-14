@@ -11,6 +11,8 @@ class RadioForm extends FormAbstract implements FormInterface {
         $name = $data['name'];
         $value = $data['value'];
 
+        $attributes = $this->attributes(array_except($data, ['other', 'name', 'value', 'class']));
+
         if ( ! is_array($value)) $value = explode(',', (string)$value);
 
         $form = null;
@@ -20,7 +22,7 @@ class RadioForm extends FormAbstract implements FormInterface {
             $form .= '<div class="radio"><label>';
 
             $checked = in_array($optionKey, $value) ? ' checked' : null;
-            $form .= '<input type="radio" name="'.e($name).'" value="'.e($optionKey).'"'.$checked.'>';
+            $form .= '<input type="radio" name="'.e($name).'" value="'.e($optionKey).'"'.$checked.$attributes.'>';
             $form .= e($optionValue);
             $form .= '</label></div>';
         }
