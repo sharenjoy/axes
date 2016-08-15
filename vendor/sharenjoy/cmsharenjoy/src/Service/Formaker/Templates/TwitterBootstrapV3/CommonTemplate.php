@@ -9,9 +9,9 @@ class CommonTemplate extends TemplateAbstract implements TemplateInterface {
     
     protected $data;
 
-    protected $template = '<div class="{outer-class}"{style}>
+    protected $template = '<div{outer-div}{style}>
                                {label-outer}
-                               <div class="{inner-class}">
+                               <div{inner-div}>
                                    {label-inner}
                                    {field}
                                    {error}
@@ -37,8 +37,24 @@ class CommonTemplate extends TemplateAbstract implements TemplateInterface {
         $data['help']  = $this->help();
         $data['error'] = $this->error();
 
-        $data['outer-class'] = $this->getSettingOrConfig('outer-div-class');
-        $data['inner-class'] = $this->getSettingOrConfig('inner-div-class');
+        if (isset($data['setting']['outer-div'])) {
+            if (! isset($data['setting']['outer-div']['class'])) {
+                $data['setting']['outer-div']['class'] = $data['config']['outer-div-class'];
+            }
+            $data['outer-div'] = $this->attributes($data['setting']['outer-div']);
+        } else {
+            $data['outer-div'] = " class=\"{$data['config']['outer-div-class']}\"";
+        }
+
+        if (isset($data['setting']['inner-div'])) {
+            if (! isset($data['setting']['inner-div']['class'])) {
+                $data['setting']['inner-div']['class'] = $data['config']['inner-div-class'];
+            }
+            $data['inner-div'] = $this->attributes($data['setting']['inner-div']);
+        } else {
+            $data['inner-div'] = " class=\"{$data['config']['inner-div-class']}\"";
+        }
+
         $data['style'] = $this->data['type'] == 'hidden' ? ' style="display:none"' : '';
 
         if ( ! is_null($data['error']))

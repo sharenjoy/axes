@@ -9,7 +9,7 @@ return [
      *
      * // The attrubutes can be allowed the following
      * value, type, help, placeholder, label, label-inner, args
-     * label-class, error-class, help-class, inner-div-class, outer-div-class
+     * label-class, error-class, help-class, inner-div, outer-div
      * input, filter, category, option, method, relaction, pleaseSelect
      * 
      * 
@@ -19,7 +19,7 @@ return [
      * {{Formaker::description(['value'=>'This is value'])}}
      * {{Formaker::description(['type'=>'wysiwyg-simple'])}}
      * {{Formaker::tag(['help'=>'This is tag', 'placeholder'=>'You can use "," to sperate every tag'])}}
-     * {{Formaker::name(['args'=>['class'=>'options', 'id'=>'name']])}}
+     * {{Formaker::name(['args'=>['class'=>'options', 'id'=>'name'], 'outer-div' => ['class'=>'form-group', 'id'=>'app'], 'inner-div' => ['class'=>'col-md-5']])}}
      * {{Formaker::avatar(['type'=>'image', 'size'=>'180x180'])}}
      * 
      * {{Formaker::status(['type'=>'checkbox', 'value'=>'1,2'])}}
