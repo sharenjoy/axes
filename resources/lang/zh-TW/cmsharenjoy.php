@@ -18,6 +18,7 @@ return [
         'product'                 => '產品管理',
         'order'                   => '訂單管理',
         'qna'                     => '問答管理',
+        'carousel'                => '首頁輪播管理',
     ],
 
 
@@ -29,7 +30,7 @@ return [
     'user'                        => '使用者',
     'setting'                     => '系統設定',
     'filer'                       => '檔案管理',
-
+    'carousel'                    => '首頁輪播',
 
     'login'                       => '登入',
     'logout'                      => '登出',
@@ -140,6 +141,7 @@ return [
     'qna'                         => '問答Q&A',
     'process'                     => '處理進度',
     'quantity'                    => '數量',
+    'status'                      => '狀態',
 
 
     // For form    
@@ -151,6 +153,7 @@ return [
         'title'                   => '標題',
         'title_jp'                => '日文標題',
         'status'                  => '狀態',
+        'status_id'               => '狀態',
         'keyword'                 => '關鍵字',
         'tag'                     => '標籤',
         'slug'                    => '唯一判別值',
@@ -189,6 +192,17 @@ return [
         'folder_name'             => '文件夾名稱',
         'quantity'                => '數量',
         'count'                   => '數量',
+
+        'carousel' => [
+            'video'               => '影片',
+            'placeholder'         => [
+                'video'           => 'https://youtu.be/VjcRoBkivrk',
+            ],
+
+            'help'                => [
+                'video'           => '請貼上Youtube影片分享連結',
+            ],
+        ],
 
 
         'placeholder' => [

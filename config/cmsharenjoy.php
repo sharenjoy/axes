@@ -61,6 +61,10 @@ return [
      * and side of the application
      */
     'menu_items' => [
+        'carousel' => [
+            'name' => 'cmsharenjoy.menu.carousel',
+            'icon' => 'entypo-video',
+        ],
         'post' => [
             'name' => 'cmsharenjoy.menu.post',
             'icon' => 'entypo-doc-text',

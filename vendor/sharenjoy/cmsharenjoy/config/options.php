@@ -48,6 +48,11 @@ return [
         '4' => 'option.deliveryTimeZone4',
         '5' => 'option.deliveryTimeZone5',
     ],
+
+    'carousel_type' => [
+        'image' => 'option.carouselTypeImage',
+        'video' => 'option.carouselTypeVideo',
+    ],
     
     
 ];

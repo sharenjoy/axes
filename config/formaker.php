@@ -10,7 +10,7 @@ return [
      * // The attrubutes can be allowed the following
      * value, type, help, placeholder, label, label-inner, args
      * label-class, error-class, help-class, inner-div, outer-div
-     * input, filter, category, option, method, relaction, pleaseSelect
+     * input, filter, category, option, method, relation, pleaseSelect
      * 
      * 
      * {{Formaker::title()}}

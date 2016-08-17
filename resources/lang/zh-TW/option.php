@@ -44,5 +44,9 @@ return [
     'deliveryTimeZone4' => '17時-20時',
     'deliveryTimeZone5' => '20時-21時',
 
+    // carousel_type
+    'carouselTypeImage' => '圖片',
+    'carouselTypeVideo' => '影片',
+
     
 ];
