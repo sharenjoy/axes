@@ -3208,6 +3208,7 @@ return array(
     'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\LinkList' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/LinkList.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\ListAbstract' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/ListAbstract.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\ListInterface' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/ListInterface.php',
+    'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\PriceList' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/PriceList.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\StatusList' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/StatusList.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\YoutubeList' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/YoutubeList.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Templates\\DefaultTemplate' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Lister/Templates/DefaultTemplate.php',

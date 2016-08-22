@@ -3579,6 +3579,7 @@ class ComposerStaticInit2c6c00b0d99d385951a38f469e154c31
         'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\LinkList' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/LinkList.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\ListAbstract' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/ListAbstract.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\ListInterface' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/ListInterface.php',
+        'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\PriceList' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/PriceList.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\StatusList' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/StatusList.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Lists\\YoutubeList' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Lister/Lists/YoutubeList.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Lister\\Templates\\DefaultTemplate' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Lister/Templates/DefaultTemplate.php',
