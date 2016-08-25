@@ -235,6 +235,18 @@ abstract class EloquentBaseRepository implements EloquentBaseInterface {
     }
 
     /**
+     * Begin querying a model with eager loading.
+     *
+     * @param  array|string  $relations
+     */
+    public function with($relations)
+    {
+        $this->model->with($relations);
+        
+        return $this;
+    }
+
+    /**
      * To make query from model setting
      * @param  string $method
      * @param  Model $model

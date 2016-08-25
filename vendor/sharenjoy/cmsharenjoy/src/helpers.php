@@ -556,3 +556,26 @@ if ( ! function_exists('category_options'))
     }
 }
 
+if ( ! function_exists('img_resize'))
+{
+    /**
+     * To resize the image
+     */
+    function img_resize($filename, $width, $height)
+    {
+        $path      = config('filer.path');
+        $thumbPath = config('filer.thumbPath');
+
+        $imageInfo      = pathinfo($filename);
+        $targetFilename = "{$imageInfo['filename']}_{$width}x{$height}.{$imageInfo['extension']}";
+
+        $imagePath      = public_path().$path.'/'.$filename;
+        $thumbImagePath = public_path().$thumbPath.'/'.$targetFilename;
+        
+        if (! file_exists($thumbImagePath)) {
+            \Image::make($imagePath)->fit($width, $height)->save($thumbImagePath);
+        }
+        
+        return asset($thumbPath.'/'.$targetFilename);
+    }
+}
