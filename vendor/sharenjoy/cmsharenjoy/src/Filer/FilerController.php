@@ -1,9 +1,9 @@
 <?php namespace Sharenjoy\Cmsharenjoy\Filer;
 
+use Config, Filer, Message;
+use App, Response, Redirect;
 use Illuminate\Http\Request;
 use Sharenjoy\Cmsharenjoy\Http\Controllers\BaseController;
-use Config, Lang, Theme, Message, Session;
-use Response, App, Redirect, Filer;
 
 /**
  * PyroCMS file Admin Controller
@@ -29,7 +29,7 @@ class FilerController extends BaseController {
         parent::__construct();
 
         $allowed_extensions = array();
-        $config = Config::get('filer.allowed_file_ext');
+        $config = config('filer.allowed_file_ext');
 
         foreach ($config as $type) {
             $allowed_extensions = array_merge($allowed_extensions, $type);
@@ -243,7 +243,7 @@ class FilerController extends BaseController {
      */
     public function postOrder(Request $request)
     {
-        if( ! Request::ajax()) Response::json('error', 400);
+        if( ! $request->ajax()) Response::json('error', 400);
 
         $id_value   = $request->input('id_value');
         $sort_value = $request->input('sort_value');
@@ -461,7 +461,7 @@ EOE;
      */
     public function postFind(Request $request)
     {
-        if( ! Request::ajax())
+        if( ! $request->ajax())
         {
             Response::json('error', 400);
         }
