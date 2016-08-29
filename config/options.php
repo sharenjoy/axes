@@ -53,6 +53,17 @@ return [
         'image' => 'option.carouselTypeImage',
         'video' => 'option.carouselTypeVideo',
     ],
+
+    'tag_type' => [
+        'product' => 'option.tagTypeProduct',
+        'post'    => 'option.tagTypePost',
+    ],
+
+    'post_type' => [
+        'image' => 'option.postTypeImage',
+        'video' => 'option.postTypeVideo',
+        'album' => 'option.postTypeAlbum',
+    ],
     
     
 ];

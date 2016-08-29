@@ -20,7 +20,7 @@ class YoutubeForm extends FormAbstract implements FormInterface
         
         $form = '<input type="text"'.$attributes.' id="youtube_field"><input type="hidden"'.$attributesReal.' id="youtube_field_real"><div id="youtube_img" style="display:none; margin-top: 3px"><img src="" width="120" height="90" class="img-thumbnail"></div>';
 
-        Theme::asset()->writeScript('script', '
+        Theme::asset()->writeScript('youtubeform-script', '
             $(function() {
                 $("#youtube_field").change(function() {
                     var imgPath = $(this).val();

@@ -37,8 +37,8 @@ class Carousel extends EloquentBaseModel
     public $formConfig = [
         'title'        => ['order' => '10'],
         'content'      => ['order' => '15', 'type' => 'textarea', 'args'=>['rows'=>'4']],
-        'type'         => ['order' => '20', 'type' => 'radio', 'option' => 'carousel_type', 'args' => ['@click'=>'changeCarouselType']],
-        'img'          => ['order' => '25', 'outer-div' => ['class'=>'form-group', ':class'=>'{"animated fadeIn": animationStyle}', 'v-show'=>'imageShow'], 'size' =>'1580x860'],
+        'img'          => ['order' => '20', 'size' =>'1580x860'],
+        'type'         => ['order' => '25', 'type' => 'radio', 'option' => 'carousel_type', 'args' => ['@click'=>'changeCarouselType']],
         'link'         => ['order' => '30', 'outer-div' => ['class'=>'form-group', ':class'=>'{"animated fadeIn": animationStyle}', 'v-show'=>'imageShow']],
         'video'        => ['order' => '40', 'outer-div' => ['class'=>'form-group', ':class'=>'{"animated fadeIn": animationStyle}', 'v-show'=>'videoShow'], 'type' => 'youtube'],
         'status_id'    => ['order' => '60', 'type' =>'radio', 'option'=>'status', 'value'=>'1'],

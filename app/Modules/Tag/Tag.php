@@ -12,17 +12,22 @@ class Tag extends EloquentBaseModel
     protected $table = 'tags';
 
     protected $fillable = [
+        'type',
         'tag',
         'count'
     ];
 
     protected $eventItem = [];
 
-    public $filterFormConfig = [];
+    public $filterFormConfig = [
+        'type'      => ['order'=>'10', 'type' => 'select', 'option'=>'tag_type', 'pleaseSelect'=>true],
+        'keyword'   => ['order'=>'20', 'filter' => 'tags.tag'],
+    ];
 
     public $formConfig = [
-        'tag'          => ['type'  => 'text', 'order' => '10'],
-        'count'        => ['type'  => 'text', 'order' => '20', 'value' => 0],
+        'type'    => ['type'=>'select',  'order' => '5', 'option'=>'tag_type', 'pleaseSelect'=>true],
+        'tag'     => ['type'  => 'text', 'order' => '10'],
+        'count'   => ['type'  => 'text', 'order' => '20', 'value' => 0],
     ];
 
     public function listQuery()

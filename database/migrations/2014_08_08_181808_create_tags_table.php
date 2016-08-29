@@ -17,6 +17,7 @@ class CreateTagsTable extends Migration {
             $table->engine = 'InnoDB';
 			
 			$table->increments('id');
+            $table->string('type')->nullable()->index();
 			$table->string('tag', 255)->index();
 			$table->boolean('suggest')->default(false);
 			$table->integer('count')->unsigned()->default(1); // count of how many times this tag was used

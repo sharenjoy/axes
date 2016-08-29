@@ -117,6 +117,7 @@ return [
     'email'                       => '電子信箱',
     'created'                     => '建立時間',
     'updated'                     => '更新時間',
+    'published'                   => '發佈日期',
     'address'                     => '寄送地址',
     'slug'                        => '唯一判別值',
     'title'                       => '標題',
@@ -192,15 +193,14 @@ return [
         'folder_name'             => '文件夾名稱',
         'quantity'                => '數量',
         'count'                   => '數量',
+        'published_at'            => '發佈日期',
+        'video'                   => '影片',
 
-        'carousel' => [
-            'video'               => '影片',
+        'post' => [
+            'album_notes'         => '相簿',
             'placeholder'         => [
-                'video'           => 'https://youtu.be/VjcRoBkivrk',
             ],
-
             'help'                => [
-                'video'           => '請貼上Youtube影片分享連結',
             ],
         ],
 
@@ -210,6 +210,7 @@ return [
             'link'                => 'http://www.example.com.tw',
             'slug'                => '例如 google',
             'keyword'             => '請輸入您想要篩選的關鍵字',
+            'video'               => 'https://youtu.be/VjcRoBkivrk',
             'user' => [
                 'first_name'      => '請輸入您的名字',
                 'last_name'       => '請輸入您的姓',
@@ -223,6 +224,7 @@ return [
             'link'                => '請輸入以 http:// 為開頭的連結網址',
             'slug'                => '這是一個只能使用英文字母組成且唯一的判別值',
             'album'               => '點開啟按鈕開啟管理相簿視窗。可管理附屬於此項目的相簿內容。',
+            'video'               => '請貼上Youtube影片分享連結',
             'user' => [
                 'first_name'      => '',
             ],

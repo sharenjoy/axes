@@ -10,7 +10,10 @@ class PostValidator extends AbstractLaravelValidator
 
     public $rules = [
         'title'     => 'required|unique:posts,title',
-        'content'   => 'required'
+        'type'       => 'required',
+        'tag'       => 'required',
+        'content'   => 'required',
+        'published_at' => 'required',
     ];
 
 }

@@ -4,18 +4,21 @@ namespace App\Providers;
 
 use App\Modules\Tag\Tag;
 use App\Modules\Post\Post;
+use App\Modules\Product\Product;
 use App\Modules\Tag\TagValidator;
+use App\Modules\Carousel\Carousel;
 use App\Modules\Category\Category;
 use App\Modules\Tag\TagRepository;
 use App\Modules\Post\PostValidator;
-use App\Modules\Carousel\Carousel;
 use App\Modules\Post\PostRepository;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
-use App\Modules\Category\CategoryValidator;
-use App\Modules\Category\CategoryRepository;
+use App\Modules\Product\ProductValidator;
+use App\Modules\Product\ProductRepository;
 use App\Modules\Carousel\CarouselValidator;
+use App\Modules\Category\CategoryValidator;
 use App\Modules\Carousel\CarouselRepository;
+use App\Modules\Category\CategoryRepository;
 use Sharenjoy\Cmsharenjoy\Service\Categorize\Categorize;
 use Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\Provider as CategoryProvider;
 use Sharenjoy\Cmsharenjoy\Service\Categorize\CategoryRelates\Provider as CategoryRelateProvider;
@@ -59,6 +62,12 @@ class ModuleServiceProvider extends ServiceProvider
         $this->app->bind('App\Modules\Carousel\CarouselInterface', function()
         {
             return new CarouselRepository(new Carousel, new CarouselValidator);
+        });
+
+        // The Product Binding
+        $this->app->bind('App\Modules\Product\ProductInterface', function()
+        {
+            return new ProductRepository(new Product, new ProductValidator);
         });
 
         $this->registerCategoryProvider();

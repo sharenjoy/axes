@@ -95,6 +95,40 @@ return [
             ]
         ],
 
+        'cloneya' => [
+            'jquery-cloneya' => [
+                'file'  => 'js/jquery-cloneya/jquery-cloneya.min.js',
+                'type'  => 'script',
+                'queue' => false,
+            ]
+        ],
+
+        'jquery-confirm' => [
+            'jquery-confirm' => [
+                'file'  => 'js/sharenjoy/jquery.confirm.min.js',
+                'type'  => 'script',
+                'queue' => false,
+            ]
+        ],
+
+        'ladda-bootstrap' => [
+            'ladda-themeless' => [
+                'file'  => 'js/ladda-bootstrap/dist/ladda-themeless.min.css',
+                'type'  => 'style',
+                'queue' => false,
+            ],
+            'spin' => [
+                'file'  => 'js/ladda-bootstrap/dist/spin.min.js',
+                'type'  => 'script',
+                'queue' => false,
+            ],
+            'ladda' => [
+                'file'  => 'js/ladda-bootstrap/dist/ladda.min.js',
+                'type'  => 'script',
+                'queue' => false,
+            ]
+        ],
+
     ],
 
 ];

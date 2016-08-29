@@ -28,7 +28,7 @@ class CustomerSimpleForm extends FormAbstract implements FormInterface {
 
         Theme::asset()->add('typeahead', 'packages/sharenjoy/cmsharenjoy/js/typeahead.min.js');
 
-        Theme::asset()->writeScript('script', '
+        Theme::asset()->writeScript('customersimpleform-script', '
             $(function() {
 
                 $(".typeahead")

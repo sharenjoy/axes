@@ -21,10 +21,14 @@ class CreatePostsTable extends Migration {
                 $table->integer('user_id')->unsigned()->nullable()->default(0);
                 $table->integer('status_id')->unsigned()->nullable()->default(0);
                 $table->integer('album_id')->unsigned()->nullable()->default(0);
-                $table->string('title', 255);
-                $table->string('slug', 255)->unique();
+                $table->string('type')->index();
+                $table->string('title');
+                $table->string('img')->nullable();
+                $table->string('video')->nullable();
+                $table->string('slug')->unique();
                 $table->text('content')->nullable();
                 $table->integer('sort')->unsigned()->nullable()->default(0);
+                $table->date('published_at')->index();
                 $table->timestamps();
             });
         }

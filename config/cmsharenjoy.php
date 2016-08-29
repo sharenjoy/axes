@@ -69,6 +69,10 @@ return [
             'name' => 'cmsharenjoy.menu.post',
             'icon' => 'entypo-doc-text',
         ],
+        'product' => [
+            'name' => 'cmsharenjoy.menu.product',
+            'icon' => 'entypo-feather',
+        ],
         'category' => [
             'name' =>'cmsharenjoy.menu.category',
             'icon' =>'entypo-share',

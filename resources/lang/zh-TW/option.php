@@ -48,5 +48,13 @@ return [
     'carouselTypeImage' => '圖片',
     'carouselTypeVideo' => '影片',
 
+    // tag_type
+    'tagTypeProduct' => '產品',
+    'tagTypePost'    => '消息',
+
+    // post_type
+    'postTypeImage' => '圖片',
+    'postTypeVideo' => '影片',
+    'postTypeAlbum' => '相簿',
     
 ];

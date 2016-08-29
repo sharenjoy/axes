@@ -13,11 +13,16 @@ class PostRepository extends EloquentBaseRepository implements PostInterface
         $this->validator = $validator;
     }
 
-    public function makeQuery($method = 'listQuery', $model = null)
+    public function makeFrontendQuery($method = 'listQuery', $model = null)
     {
         $model = $model ?: $this->model;
-        
-        return $model->$method()->with('tags');
+
+        return $model->$method()->with(['album.files', 'tags'])->whereStatusId('1')->where('published_at', '<=', date('Y-m-d'));
+    }
+
+    public function showByAmount($num = 4)
+    {
+        return $this->makeFrontendQuery()->take($num)->get();
     }
 
 }

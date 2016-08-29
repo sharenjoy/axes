@@ -15,9 +15,9 @@ class CategoryForm extends FormAbstract implements FormInterface {
                                                        ->whereType($categoryType)
                                                        ->orderBy('sort', 'asc')
                                                        ->get();
-                                                       
+
         $option = array('0' => pick_trans('option.pleaseSelect')) +
-                  Categorize::tree($categories)->lists('title', 'id');
+                  Categorize::tree($categories)->lists('title', 'id')->toArray();
         
         $form = '<select'.$attributes.'>';
 
