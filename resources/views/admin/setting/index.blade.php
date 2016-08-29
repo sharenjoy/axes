@@ -49,15 +49,16 @@
                                 <div class="tab-content">
                                     
                                     @foreach($items as $key => $item)
-                                    @if($key == 'general')
-                                    <div class="tab-pane active" id="{{$key}}">
-                                    @else
-                                    <div class="tab-pane" id="{{$key}}">
-                                    @endif
+                                        @if($key == 'general')
+                                        <div class="tab-pane active" id="{{$key}}">
+                                        @else
+                                        <div class="tab-pane" id="{{$key}}">
+                                        @endif
                                             
                                         {!!Form::open(array('url'=>$objectUrl, 'class'=>'form-horizontal form-groups-bordered', 'role'=>'form', 'id'=>'item-form'))!!}
                                             
                                             @foreach($item['item'] as $value)
+                                            @if(! $value->hidden)
                                             <div class="form-group setting-input">
                                                 <div class="col-sm-5 col-md-5">
                                                     <p>{!!Form::label($value->key, pick_trans('setting.label.'.$value->key), array('class'=>'control-label'))!!}</p>
@@ -112,6 +113,7 @@
                                                     <span class="help-block">{!!pick_trans('setting.description.'.$value->key)!!}</span>
                                                 </div>
                                             </div>
+                                            @endif
                                             @endforeach
 
                                         {!!Form::close()!!}

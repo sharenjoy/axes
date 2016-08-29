@@ -5,6 +5,7 @@ return [
     'menu' => [
         'dash'                    => '控制台',
         'file'                    => '檔案管理',
+        'album'                   => '相簿管理',
         'user'                    => '使用者管理',
         'setting'                 => '系統設定',
         'member'                  => '會員管理',
@@ -145,7 +146,6 @@ return [
     'status'                      => '狀態',
     'video'                       => '影片',
 
-
     // For form    
     'form' => [
         'name'                    => '姓名',
@@ -196,6 +196,7 @@ return [
         'count'                   => '數量',
         'published_at'            => '發佈日期',
         'video'                   => '影片',
+        'filealbum'               => '檔案管理',
 
         'post' => [
             'album_notes'         => '相簿',
@@ -224,7 +225,8 @@ return [
         'help' => [
             'link'                => '請輸入以 http:// 為開頭的連結網址',
             'slug'                => '這是一個只能使用英文字母組成且唯一的判別值',
-            'album'               => '點開啟按鈕開啟管理相簿視窗。可管理附屬於此項目的相簿內容。',
+            'album'               => '點開啟按鈕開啟相簿管理視窗。可管理附屬於此項目的相簿內容。',
+            'filealbum'           => '點開啟按鈕開啟檔案管理視窗。可管理附屬於此項目的檔案內容。',
             'video'               => '請貼上Youtube影片分享連結',
             'user' => [
                 'first_name'      => '',

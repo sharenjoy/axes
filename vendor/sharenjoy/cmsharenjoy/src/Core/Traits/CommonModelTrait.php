@@ -190,33 +190,4 @@ trait CommonModelTrait {
         return static::$reflection;
     }
 
-    /**
-     * Figure out if tags can be used on the model
-     * @return boolean
-     */
-    public function isTaggable()
-    {
-        return in_array(
-            'App\Modules\Tag\TaggableTrait', 
-            $this->getReflection()->getTraitNames()
-        );
-    }
-
-    /**
-     * Figure out if album can be used on the model
-     * @return boolean
-     */
-    public function isAlbumable()
-    {
-        return in_array(
-            'Sharenjoy\Cmsharenjoy\Filer\AlbumTrait',
-            $this->getReflection()->getTraitNames()
-        ) ||
-        in_array(
-            'Sharenjoy\Cmsharenjoy\Filer\FilealbumTrait',
-            $this->getReflection()->getTraitNames()
-        );
-    }
-
-
 }

@@ -146,7 +146,7 @@ return [
 
         // For album
         'album'                 => 'album',
-        'filealbum'             => 'album',
+        'filealbum'             => 'filealbum',
 
         // For category
         'category_id'           => 'category',
@@ -158,6 +158,9 @@ return [
         // For employee
         'employee_id'           => 'employee',
         'employee'              => 'employee',
+
+        // For video
+        'video'                 => 'youtube'
     ],
 
 ];

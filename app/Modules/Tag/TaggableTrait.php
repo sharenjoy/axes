@@ -220,4 +220,16 @@ trait TaggableTrait
 		return $this->tags()->getRelated()->get()->lists('tag', 'id');
 	}
 
+	/**
+     * Figure out if tags can be used on the model
+     * @return boolean
+     */
+    public function isTaggable()
+    {
+        return in_array(
+            'App\Modules\Tag\TaggableTrait', 
+            $this->getReflection()->getTraitNames()
+        );
+    }
+
 }

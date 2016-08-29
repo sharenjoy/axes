@@ -13,7 +13,17 @@ class SettingsSeeder extends Seeder {
                 'type'          => 'text',
                 'value'         => 'Cmsharenjoy',
                 'module'        => 'general',
+                'hidden'        => false,
                 'sort'          => '1',
+                'created_at'    => date('Y-m-d H:i:s')
+            ],
+            [
+                'key'           => 'admin_email',
+                'type'          => 'textarea',
+                'value'         => config('cmsharenjoy.administrator.email'),
+                'module'        => 'general',
+                'hidden'        => false,
+                'sort'          => '2',
                 'created_at'    => date('Y-m-d H:i:s')
             ],
             [
@@ -21,7 +31,8 @@ class SettingsSeeder extends Seeder {
                 'type'          => 'text',
                 'value'         => 'local',
                 'module'        => 'file',
-                'sort'          => '2',
+                'hidden'        => true,
+                'sort'          => '3',
                 'created_at'    => date('Y-m-d H:i:s')
             ],
             [
@@ -29,7 +40,8 @@ class SettingsSeeder extends Seeder {
                 'type'          => 'text',
                 'value'         => '4',
                 'module'        => 'file',
-                'sort'          => '3',
+                'hidden'        => true,
+                'sort'          => '4',
                 'created_at'    => date('Y-m-d H:i:s')
             ],
             [
@@ -37,7 +49,8 @@ class SettingsSeeder extends Seeder {
                 'type'          => 'text',
                 'value'         => '',
                 'module'        => 'file',
-                'sort'          => '4',
+                'hidden'        => true,
+                'sort'          => '5',
                 'created_at'    => date('Y-m-d H:i:s')
             ],
 

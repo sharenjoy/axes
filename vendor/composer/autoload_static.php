@@ -377,6 +377,7 @@ class ComposerStaticInit2c6c00b0d99d385951a38f469e154c31
     );
 
     public static $classMap = array (
+        'AddColumnToSettingsTable' => __DIR__ . '/../..' . '/database/migrations/2016_08_30_020008_add_column_to_settings_table.php',
         'AddColumnsToUserTable' => __DIR__ . '/../..' . '/database/migrations/2014_07_31_144538_add_columns_to_user_table.php',
         'App\\Console\\Commands\\Inspire' => __DIR__ . '/../..' . '/app/Console/Commands/Inspire.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
@@ -3548,6 +3549,7 @@ class ComposerStaticInit2c6c00b0d99d385951a38f469e154c31
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\EmailForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/EmailForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\EmployeeForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/EmployeeForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FileForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FileForm.php',
+        'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FilealbumForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FilealbumForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FormAbstract' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FormAbstract.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FormInterface' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FormInterface.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\HiddenForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/HiddenForm.php',

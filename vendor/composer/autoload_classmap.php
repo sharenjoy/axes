@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddColumnToSettingsTable' => $baseDir . '/database/migrations/2016_08_30_020008_add_column_to_settings_table.php',
     'AddColumnsToUserTable' => $baseDir . '/database/migrations/2014_07_31_144538_add_columns_to_user_table.php',
     'App\\Console\\Commands\\Inspire' => $baseDir . '/app/Console/Commands/Inspire.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
@@ -3177,6 +3178,7 @@ return array(
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\EmailForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/EmailForm.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\EmployeeForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/EmployeeForm.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FileForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FileForm.php',
+    'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FilealbumForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FilealbumForm.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FormAbstract' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FormAbstract.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FormInterface' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FormInterface.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\HiddenForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/HiddenForm.php',

@@ -19,4 +19,16 @@ trait AlbumTrait {
         $model->save();
     }
 
+    /**
+     * Figure out if album can be used on the model
+     * @return boolean
+     */
+    public function isAlbumable()
+    {
+        return in_array(
+            'Sharenjoy\Cmsharenjoy\Filer\AlbumTrait',
+            $this->getReflection()->getTraitNames()
+        );
+    }
+
 }

@@ -19,6 +19,7 @@ class ControllerAfterAction {
 
             case 'post-delete':
                 $this->deleteAlbum($data);
+                $this->deleteFileAlbum($data);
                 break;
             
             default:
@@ -28,7 +29,7 @@ class ControllerAfterAction {
 
     private function outputAlbumIdToView($data)
     {
-        if ($data->isAlbumable() && $data->album_id)
+        if ($data->album_id && $data->isAlbumable())
         {
             view()->share('albumId', $data->album_id);
         }
@@ -36,9 +37,9 @@ class ControllerAfterAction {
 
     private function outputFilealbumIdToView($data)
     {
-        if ($data->isAlbumable() && $data->filealbum_id)
+        if ($data->filealbum_id && $data->isFileAlbumable())
         {
-            view()->share('albumId', $data->filealbum_id);
+            view()->share('fileAlbumId', $data->filealbum_id);
         }
     }
 
@@ -47,6 +48,14 @@ class ControllerAfterAction {
         if ($data->isAlbumable())
         {
             Filer::deleteFolderDoNotConfirm($data->album_id);
+        }
+    }
+
+    private function deleteFileAlbum($data)
+    {
+        if ($data->isFileAlbumable())
+        {
+            Filer::deleteFolderDoNotConfirm($data->filealbum_id);
         }
     }
 
