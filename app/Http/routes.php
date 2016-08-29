@@ -22,6 +22,10 @@ Route::post('/contactus',   'App\Http\Controllers\HomeController@contactUs');
 Route::post('/search',      'App\Http\Controllers\HomeController@search');
 Route::get('/downloadfile/{filename}', 'App\Http\Controllers\HomeController@downloadFile');
 
+Route::get('/', function() {
+    return view('welcome');
+});
+
 /**
  * For the backend
  */
