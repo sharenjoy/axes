@@ -20,7 +20,7 @@ return [
 
     'description' => [
         'brand_name'              => '品牌名稱',
-        'admin_email'             => '管理者信箱',
+        'admin_email'             => '管理者信箱。如果有多組信箱，請使用半型逗號分隔 \',\'。<br />任何Email寄送將會送往，這裡所有設定的Email',
         'files_enabled_providers' => '檔案儲存媒體',
         'files_upload_limit'      => '檔案上傳限制',
         'date_format'             => '時間格式',

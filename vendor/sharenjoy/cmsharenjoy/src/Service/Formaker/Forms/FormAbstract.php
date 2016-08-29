@@ -38,6 +38,8 @@ abstract class FormAbstract {
     protected function attributeElement($key, $value)
     {
         if (is_numeric($key)) $key = $value;
+        
+        if (is_array($value)) $value = null;
 
         if ( ! is_null($value)) return $key.'="'.e($value).'"';
     }

@@ -73,4 +73,9 @@ class Tag extends EloquentBaseModel
         return parent::__call($method, $parameters);
     }
 
+    public function grabTagtypeLists()
+    {
+        return trans_options('options.tag_type');
+    }
+
 }

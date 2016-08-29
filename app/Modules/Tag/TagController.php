@@ -15,9 +15,10 @@ class TagController extends ObjectBaseController
     ];
 
     protected $listConfig = [
+        'type'         => ['name'=>'type',         'align'=>'center', 'width'=>'10%', 'lists' => 'tag.tagtype'   ],
         'tag'          => ['name'=>'tag',          'align'=>'',       'width'=>''   ],
         'count'        => ['name'=>'quantity',     'align'=>'right',  'width'=>'10%'],
-        'created_at'   => ['name'=>'created',      'align'=>'center', 'width'=>'20%'],
+        'updated_at'   => ['name'=>'updated',      'align'=>'center', 'width'=>'20%'],
     ];
 
     public function __construct(TagInterface $repo)

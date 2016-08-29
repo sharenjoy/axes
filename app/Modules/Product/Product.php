@@ -41,8 +41,8 @@ class Product extends EloquentBaseModel {
     ];
 
     public $filterFormConfig = [
-        'keyword'     => ['order'=>'10', 'filter' => 'products.title,products.content,products.specification'],
-        'status'      => ['order'=>'20', 'option'=>'status', 'pleaseSelect'=>true],
+        'status'      => ['order'=>'10', 'option'=>'status', 'pleaseSelect'=>true],
+        'keyword'     => ['order'=>'20', 'filter' => 'products.title,products.content,products.specification'],
     ];
 
     public $formConfig = [
@@ -104,6 +104,11 @@ class Product extends EloquentBaseModel {
         return $model->tags()->sync($data);
     }
 
+    public function grabTagLists()
+    {
+        return $this->tags()->getRelated()->where('type', 'product')->get()->lists('tag', 'id');
+    }
+
     public function fieldPnb($id)
     {
         if (! $id) {
@@ -115,13 +120,13 @@ class Product extends EloquentBaseModel {
         return ['value' => $result];
     }
 
-    public function fieldPnbTwo($id)
+    public function fieldPrice($id)
     {
         if (! $id) {
             return [];
         }
 
-        $result = $this->handleSerializeFields($id, ['pnb_two_key_serialize', 'pnb_two_value_serialize', 'pnb_two_price_serialize']);
+        $result = $this->handleSerializeFields($id, ['price_range_start_serialize', 'price_range_end_serialize', 'price_discount_serialize']);
 
         return ['value' => $result];
     }
@@ -144,14 +149,4 @@ class Product extends EloquentBaseModel {
         return $result;
     }
 
-    public function fieldPrice($id)
-    {
-        if (! $id) {
-            return [];
-        }
-
-        $result = $this->handleSerializeFields($id, ['price_range_start_serialize', 'price_range_end_serialize', 'price_discount_serialize']);
-
-        return ['value' => $result];
-    }
 }

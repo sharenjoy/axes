@@ -143,6 +143,7 @@ return [
     'process'                     => '處理進度',
     'quantity'                    => '數量',
     'status'                      => '狀態',
+    'video'                       => '影片',
 
 
     // For form    

@@ -13,10 +13,10 @@ class ProductController extends ObjectBaseController {
     ];
 
     protected $listConfig = [
-        'title'        => ['name'=>'title',       'align'=>'',       'width'=>''   ],
-        'status_id'    => ['name'=>'status', 'type'=>'status', 'align'=>'center', 'width'=>'80'   ],
-        'img'          => ['name'=>'image', 'type'=>'image', 'align'=>'', 'width'=>'80'   ],
-        'updated_at'   => ['name'=>'updated',      'align'=>'center', 'width'=>'140'],
+        'title'        => ['name'=>'title',      'align'=>'',       'width'=>''],
+        'img'          => ['name'=>'image',      'align'=>'',       'width'=>'80',  'type'=>'image'],
+        'status_id'    => ['name'=>'status',     'align'=>'center', 'width'=>'80' , 'type'=>'status'],
+        'updated_at'   => ['name'=>'updated',    'align'=>'center', 'width'=>'140'],
     ];
 
     public function __construct(ProductInterface $repo)

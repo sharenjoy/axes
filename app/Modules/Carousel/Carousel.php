@@ -30,8 +30,8 @@ class Carousel extends EloquentBaseModel
     ];
 
     public $filterFormConfig = [
-        'keyword'     => ['order'=>'10', 'filter' => 'carousels.title,carousels.description'],
-        'status'      => ['order'=>'20', 'option'=>'status', 'pleaseSelect'=>true],
+        'status'      => ['order'=>'10', 'option'=>'status', 'pleaseSelect'=>true],
+        'keyword'     => ['order'=>'20', 'filter' => 'carousels.title,carousels.description'],
     ];
 
     public $formConfig = [
