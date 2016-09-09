@@ -38,7 +38,7 @@ class Folder extends Eloquent
      */
     public function files()
     {
-        return $this->hasMany('Sharenjoy\Cmsharenjoy\Filer\File', 'folder_id');
+        return $this->hasMany('Sharenjoy\Cmsharenjoy\Filer\File', 'folder_id')->orderBy('sort');
     }
 
     /**
