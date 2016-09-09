@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Sharenjoy\Cmsharenjoy\Core\EloquentBaseModel;
 use Sharenjoy\Cmsharenjoy\Service\Categorize\Categories\CategoryInterface;
 
-class Category extends EloquentBaseModel implements CategoryInterface
+class Category extends EloquentBaseModel
 {
     use SoftDeletes;
 
@@ -73,7 +73,7 @@ class Category extends EloquentBaseModel implements CategoryInterface
      */
     public function parents()
     {
-        return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_id', 'category_parent_id');
+        return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_id', 'category_parent_id')->orderBy('sort');
     }
 
     /**
@@ -83,7 +83,7 @@ class Category extends EloquentBaseModel implements CategoryInterface
      */
     public function children()
     {
-        return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_parent_id', 'category_id');
+        return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_parent_id', 'category_id')->orderBy('sort');
     }
 
     /**

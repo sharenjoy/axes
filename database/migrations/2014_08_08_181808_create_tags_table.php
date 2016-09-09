@@ -21,6 +21,7 @@ class CreateTagsTable extends Migration {
 			$table->string('tag', 255)->index();
 			$table->boolean('suggest')->default(false);
 			$table->integer('count')->unsigned()->default(1); // count of how many times this tag was used
+            $table->integer('sort')->unsigned()->default(0);
             $table->timestamps();
 		});
 	}
