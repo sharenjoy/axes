@@ -53,8 +53,7 @@ abstract class ObjectBaseController extends BaseController {
         
         $model = $this->repo->makeQuery();
 
-        if ($request->has('filter'))
-        {
+        if ($request->has('filter')) {
             $filter = array_except($request->query(), $this->filterExcept);
             $model = $this->repo->filter($filter, $model);
         }
@@ -81,15 +80,41 @@ abstract class ObjectBaseController extends BaseController {
      */
     public function getSort(Request $request)
     {
+        $this->repo->grabAllLists();
+
+        $model = $this->repo->makeQuery();
+
+        $sortable = true;
+
+        if ($this->repo->isSortFilterFormConfigExists()){
+            $sortable = false;
+
+            if ($request->has('filter')) {
+                $sortable = true;
+                $filter   = array_except($request->query(), $this->filterExcept);
+                
+                foreach ($filter as $item) {
+                    if (! $item) $sortable = false;
+                }
+
+                $model = $this->repo->filter($filter, $model);
+            }
+
+            view()->share('beforeSortShouldFilter', ! $sortable);
+            view()->share('filterForm', Formaker::setModel($this->repo->getModel())->make($request->all()));
+        }
+
         $limit = $request->input('perPage', $this->paginationCount);
 
-        $items = $this->repo->showByPage($limit, $request->query(), $this->repo->makeQuery());
+        $items = $this->repo->showByPage($limit, $request->query(), $model->with($this->relations));
 
-        $data = ['paginationCount'=>$limit, 'sortable'=>true, 'rules'=>$this->functionRules];
+        $data = ['paginationCount'=>$limit, 'sortable'=>$sortable, 'rules'=>$this->functionRules];
         $lister = Lister::make($items, $this->listConfig, $data);
         
+        event('controllerAfterAction', ['']);
+
         return $this->layout()->with('listEmpty', $items->isEmpty())
-                              ->with('sortable', true)
+                              ->with('sortable', $sortable)
                               ->with('lister', $lister);
     }
 

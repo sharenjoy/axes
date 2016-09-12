@@ -284,4 +284,16 @@ abstract class EloquentBaseRepository implements EloquentBaseInterface {
         }
     }
 
+    /**
+     * To determine that is there sortFilterFormConfig exists
+     *
+     * @return boolean
+     */
+    public function isSortFilterFormConfigExists()
+    {
+        $reflection = $this->model->getReflection();
+
+        return $reflection->hasProperty('sortFilterFormConfig');
+    }
+
 }

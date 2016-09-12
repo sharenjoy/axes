@@ -73,7 +73,7 @@ abstract class FormakerAbstract {
 
     protected function setTemplate()
     {
-        $this->template = $this->onAction == 'index' ? 'filter' : 'common';
+        $this->template = $this->onAction == 'index' || $this->onAction == 'sort' ? 'filter' : 'common';
     }
 
     protected function setType()
@@ -295,9 +295,19 @@ abstract class FormakerAbstract {
             }
         }
         
-        return $formConfig = $this->onAction == 'index' 
-                           ? $this->model->filterFormConfig
-                           : $this->model->formConfig;
+        switch ($this->onAction) {
+            case 'index':
+                return $this->model->filterFormConfig;
+                break;
+
+            case 'sort':
+                return $this->model->sortFilterFormConfig;
+                break;
+            
+            default:
+                return $this->model->formConfig;
+                break;
+        }
     }
 
     protected function reOrganizeItem($formConfig)

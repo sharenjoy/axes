@@ -9,6 +9,7 @@ class ControllerAfterAction {
         switch (Session::get('onMethod'))
         {
             case 'get-index':
+            case 'get-sort':
                 Session::forget('allLists');
                 break;
 
