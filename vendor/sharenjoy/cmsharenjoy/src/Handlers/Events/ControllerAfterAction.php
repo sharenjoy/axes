@@ -45,7 +45,7 @@ class ControllerAfterAction {
 
     private function deleteAlbum($data)
     {
-        if ($data->isAlbumable())
+        if ($data->album_id && $data->isAlbumable())
         {
             Filer::deleteFolderDoNotConfirm($data->album_id);
         }
@@ -53,7 +53,7 @@ class ControllerAfterAction {
 
     private function deleteFileAlbum($data)
     {
-        if ($data->isFileAlbumable())
+        if ($data->filealbum_id && $data->isFileAlbumable())
         {
             Filer::deleteFolderDoNotConfirm($data->filealbum_id);
         }
