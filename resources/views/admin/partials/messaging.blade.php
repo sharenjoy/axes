@@ -42,3 +42,9 @@
         <p><strong>{{pick_trans('notice')}} !</strong> {{pick_trans('please_drag')}}</p>
     </div>
 @endif
+
+@if(isset($beforeSortShouldFilter) && $beforeSortShouldFilter === true)
+    <div class="alert alert-warning">
+        <p><strong>{{pick_trans('warning')}} !</strong> {{pick_trans('before_sort_should_filter')}}</p>
+    </div>
+@endif

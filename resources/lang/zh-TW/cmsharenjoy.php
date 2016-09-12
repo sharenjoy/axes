@@ -85,6 +85,7 @@ return [
     'no_item_yet'                 => '還沒有任何項目存在，請使用新增功能來新增您第一個項目',
     'invalid_email_password'      => '錯誤的帳號以及密碼',
     'please_drag'                 => '請使用滑鼠拖曳排序',
+    'before_sort_should_filter'   => '拖曳排序前請先篩選項目',
     'pagination_desc'             => '顯示 :from 至 :to 筆，總計 :total 筆',
     'admin_title'                 => '管理系統',
     'admin_quick_links'           => '快速連結',
