@@ -8,8 +8,8 @@ use Sharenjoy\Cmsharenjoy\Filer\FilealbumTrait;
 use Sharenjoy\Cmsharenjoy\Utilities\Transformer;
 use Sharenjoy\Cmsharenjoy\Core\EloquentBaseModel;
 
-class Product extends EloquentBaseModel {
-
+class Product extends EloquentBaseModel
+{
     use TaggableTrait, AlbumTrait, FilealbumTrait;
 
     protected $table = 'products';

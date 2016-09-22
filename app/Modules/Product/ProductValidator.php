@@ -1,9 +1,11 @@
-<?php namespace App\Modules\Product;
+<?php
+
+namespace App\Modules\Product;
 
 use Sharenjoy\Cmsharenjoy\Service\Validation\AbstractLaravelValidator;
 
-class ProductValidator extends AbstractLaravelValidator {
-
+class ProductValidator extends AbstractLaravelValidator
+{
     public $unique = [];
 
     public $rules = [

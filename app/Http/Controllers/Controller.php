@@ -52,6 +52,12 @@ class Controller extends BaseController
     protected $member;
 
     /**
+     * The language value
+     * @var string
+     */
+    protected $language;
+
+    /**
      * Initializer.
      * @access   public
      * @return   void
@@ -60,6 +66,7 @@ class Controller extends BaseController
     {
         $this->setCommonVariable();
         $this->getAuthInfo();
+        $this->setLanguage();
     }
 
     protected function setCommonVariable()
@@ -118,6 +125,19 @@ class Controller extends BaseController
 
             session()->put('member', $this->member->toArray());
             view()->share('member', $this->member);
+        }
+    }
+
+    protected function setLanguage()
+    {
+        if (config('cmsharenjoy.language_default')) {
+            $this->language = config('cmsharenjoy.language_default');
+
+            if (array_key_exists(Request::segment(1), config('cmsharenjoy.language'))) {
+                $this->language = Request::segment(1);
+            }
+
+            session()->put('content-language', $this->language);
         }
     }
 

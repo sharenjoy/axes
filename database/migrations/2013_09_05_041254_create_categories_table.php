@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration {
 
 		    $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable()->default(0);
+            if (config('cmsharenjoy.language_default')) $table->char('language', 4)->nullable()->index();
 		    $table->string('type', 100)->index();
 		    $table->string('title', 255);
 		    $table->string('slug', 255)->unique();

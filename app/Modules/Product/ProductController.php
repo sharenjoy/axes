@@ -1,9 +1,11 @@
-<?php namespace App\Modules\Product;
+<?php
+
+namespace App\Modules\Product;
 
 use Sharenjoy\Cmsharenjoy\Http\Controllers\ObjectBaseController;
 
-class ProductController extends ObjectBaseController {
-
+class ProductController extends ObjectBaseController
+{
     protected $functionRules = [
         'list'   => true,
         'create' => true,

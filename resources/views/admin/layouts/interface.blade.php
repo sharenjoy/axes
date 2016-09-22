@@ -195,11 +195,26 @@
                     <!-- Raw Links -->
                     <div class="col-md-6 col-sm-4 clearfix hidden-xs">
                         <ul class="list-inline links-list pull-right">
-                            <!-- <li>
-                                <a href="#">Live Site</a>
+                            @if(session()->has('cmsharenjoy.language'))
+                            <li class="dropdown language-selector">
+                                語言: &nbsp;
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+                                    <img src="{{asset('packages/sharenjoy/cmsharenjoy/images/'.config('cmsharenjoy.language.'.session('cmsharenjoy.language').'.icon'))}}" />
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    @foreach (config('cmsharenjoy.language') as $lang => $setting)
+                                        <li @if(session('cmsharenjoy.language') == $lang)class="active"@endif>
+                                            <a href="{{url($accessUrl.'/specify-content-language/'.$lang)}}">
+                                                <img src="{{asset('packages/sharenjoy/cmsharenjoy/images/'.$setting['icon'])}}" />
+                                                <span>{{$setting['title']}}</span>
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
                             </li>
                             <li class="sep"></li>
-                            <li>
+                            @endif
+                            {{-- <li>
                                 <a href="#" data-toggle="chat" data-animate="1" data-collapse-sidebar="1">
                                     <i class="entypo-chat"></i>
                                     Chat
@@ -207,7 +222,7 @@
                                     <span class="badge badge-success chat-notifications-badge is-hidden">0</span>
                                 </a>
                             </li>
-                            <li class="sep"></li> -->
+                            <li class="sep"></li> --}}
                             <li>
                                 <a href="{{ url( $accessUrl.'/logout' ) }}">
                                     {{pick_trans('logout')}} <i class="entypo-logout right"></i>

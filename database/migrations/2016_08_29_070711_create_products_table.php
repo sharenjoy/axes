@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('album_id')->unsigned()->index();
             $table->integer('filealbum_id')->unsigned()->index();
             $table->integer('status_id')->unsigned()->default(1);
+            if (config('cmsharenjoy.language_default')) $table->char('language', 4)->nullable()->index();
             $table->string('title');
             $table->text('content')->nullable();
             $table->string('video')->nullable();

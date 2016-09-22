@@ -17,6 +17,7 @@ class CreateTagsTable extends Migration {
             $table->engine = 'InnoDB';
 			
 			$table->increments('id');
+            if (config('cmsharenjoy.language_default')) $table->char('language', 4)->nullable()->index();
             $table->string('type')->nullable()->index();
 			$table->string('tag', 255)->index();
 			$table->boolean('suggest')->default(false);

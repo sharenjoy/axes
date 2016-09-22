@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration {
                 $table->integer('user_id')->unsigned()->nullable()->default(0);
                 $table->integer('status_id')->unsigned()->nullable()->default(0);
                 $table->integer('album_id')->unsigned()->nullable()->default(0);
+                if (config('cmsharenjoy.language_default')) $table->char('language', 4)->nullable()->index();
                 $table->string('type')->index();
                 $table->string('title');
                 $table->string('img')->nullable();

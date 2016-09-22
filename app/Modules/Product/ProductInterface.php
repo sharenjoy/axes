@@ -1,5 +1,8 @@
-<?php namespace App\Modules\Product;
+<?php
 
-interface ProductInterface {
+namespace App\Modules\Product;
 
+interface ProductInterface
+{
+    //
 }
