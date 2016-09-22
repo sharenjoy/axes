@@ -45,6 +45,11 @@ class Tag extends EloquentBaseModel
         return $query->where('suggest', true);
     }
 
+    public function scopeType($query, $value)
+    {
+        return $value ? $query->where('type', $value) : $query;
+    }
+
     public static function withCalculate()
     {
         return static::join('taggables', 'taggables.tag_id', '=', 'tags.id')
