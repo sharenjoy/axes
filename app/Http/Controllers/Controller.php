@@ -133,8 +133,8 @@ class Controller extends BaseController
         if (config('cmsharenjoy.language_default')) {
             $this->language = config('cmsharenjoy.language_default');
 
-            if (array_key_exists(Request::segment(1), config('cmsharenjoy.language'))) {
-                $this->language = Request::segment(1);
+            if (array_key_exists(strtolower(Request::segment(1)), config('cmsharenjoy.language'))) {
+                $this->language = strtolower(Request::segment(1));
             }
 
             session()->put('content-language', $this->language);
@@ -156,21 +156,25 @@ class Controller extends BaseController
      */
     protected function layout()
     {
-        if (view()->exists($this->onController.'.'.$this->onAction))
+        $langFolder = $this->language ? $this->language.'.' : '';
+
+        if (view()->exists($langFolder.$this->onController.'.'.$this->onAction))
         {
-            return view($this->onController.'.'.$this->onAction);
+            return view($langFolder.$this->onController.'.'.$this->onAction);
         }
-        elseif (view()->exists($this->onController.'-'.$this->onAction))
+        elseif (view()->exists($langFolder.$this->onController.'-'.$this->onAction))
         {
-            return view($this->onController.'-'.$this->onAction);
+            return view($langFolder.$this->onController.'-'.$this->onAction);
         }
-        elseif ($this->onAction == 'index' && view()->exists($this->onController))
+        elseif ($this->onAction == 'index' && view()->exists($langFolder.$this->onController))
         {
-            return view($this->onController);
+            return view($langFolder.$this->onController);
         }
-        elseif (view()->exists($this->onAction))
+        elseif (view()->exists($langFolder.$this->onAction))
         {
-            return view($this->onAction);
+            return view($langFolder.$this->onAction);
         }
+
+        throw new \Sharenjoy\Cmsharenjoy\Exception\ViewNotFoundException("Can not found view -> {$this->language} {$this->onController} {$this->onAction}");
     }
 }
