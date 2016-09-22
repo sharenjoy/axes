@@ -30,6 +30,10 @@ trait CommonModelTrait {
     {
         $input = $this->parseInputValue($input);
 
+        if (session()->has('cmsharenjoy.language')) {
+            $input['language'] = session('cmsharenjoy.language');
+        }
+
         self::$inputData = $input;
     }
 

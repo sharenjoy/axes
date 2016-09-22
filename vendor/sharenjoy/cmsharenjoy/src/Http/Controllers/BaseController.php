@@ -121,6 +121,7 @@ abstract class BaseController extends Controller
         $this->getAuthInfo();
         $this->setPackageInfo();
         $this->setHandyUrls();
+        $this->setContentLanguage();
         $this->parseMenuItems();
     }
 
@@ -223,6 +224,13 @@ abstract class BaseController extends Controller
         view()->share('updateUrl', $this->updateUrl);
         view()->share('deleteUrl', $this->deleteUrl);
         view()->share('sortUrl',   $this->sortUrl);
+    }
+
+    protected function setContentLanguage()
+    {
+        if (! session()->has('cmsharenjoy.language') && ! is_null(config('cmsharenjoy.language_default'))) {
+            session()->put('cmsharenjoy.language', config('cmsharenjoy.language_default'));
+        }
     }
 
     /**

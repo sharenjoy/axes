@@ -1,20 +1,22 @@
-<?php namespace Sharenjoy\Cmsharenjoy\Providers;
+<?php
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\AliasLoader;
+namespace Sharenjoy\Cmsharenjoy\Providers;
+
+use Request, Log;
 use Sharenjoy\Cmsharenjoy\User\User;
-use Sharenjoy\Cmsharenjoy\User\UserRepository;
-use Sharenjoy\Cmsharenjoy\User\UserValidator;
+use Illuminate\Foundation\AliasLoader;
+use Illuminate\Support\ServiceProvider;
 use Sharenjoy\Cmsharenjoy\Setting\Setting;
-use Sharenjoy\Cmsharenjoy\Setting\SettingRepository;
-use Sharenjoy\Cmsharenjoy\Setting\SettingValidator;
 use Sharenjoy\Cmsharenjoy\Utilities\Parser;
+use Sharenjoy\Cmsharenjoy\User\UserValidator;
+use Sharenjoy\Cmsharenjoy\User\UserRepository;
 use Sharenjoy\Cmsharenjoy\Filer\FilerRepository;
+use Sharenjoy\Cmsharenjoy\Setting\SettingValidator;
+use Sharenjoy\Cmsharenjoy\Setting\SettingRepository;
 use Sharenjoy\Cmsharenjoy\Service\Message\FlashMessageBag;
-use Session, Request, Log;
 
-class CmsharenjoyServiceProvider extends ServiceProvider {
-
+class CmsharenjoyServiceProvider extends ServiceProvider
+{
 	/**
 	 * Indicates if loading of the provider is deferred.
 	 *
@@ -41,8 +43,7 @@ class CmsharenjoyServiceProvider extends ServiceProvider {
             'options',
         ];
 
-        foreach ($config as $cfg)
-        {
+        foreach ($config as $cfg) {
             // Merge config to allow user overwrite.
             $this->mergeConfigFrom(__DIR__.'/../../config/'.$cfg.'.php', $cfg);
         }
@@ -52,7 +53,7 @@ class CmsharenjoyServiceProvider extends ServiceProvider {
         // To define which end it is now
         $whichEnd = Request::segment(1) == $accessUrl ? 'backEnd' : 'frontEnd';
         
-        Session::put('sharenjoy.whichEnd', $whichEnd);
+        session()->put('sharenjoy.whichEnd', $whichEnd);
 
         // Binding a bunch of repository
         $this->bindRepository();
@@ -120,9 +121,8 @@ class CmsharenjoyServiceProvider extends ServiceProvider {
         ], 'migration');
 
         // Setting the locale langage
-        if (Session::has('sharenjoy.backEndLanguage'))
-        {
-            $this->app->setLocale(Session::get('sharenjoy.backEndLanguage'));
+        if (session()->has('sharenjoy.backEndLanguage')) {
+            $this->app->setLocale(session()->get('sharenjoy.backEndLanguage'));
         }
 
         // backend prefix
@@ -167,8 +167,7 @@ class CmsharenjoyServiceProvider extends ServiceProvider {
         ];
 
         // Run through $filesToLoad array.
-        foreach ($filesToLoad as $file)
-        {
+        foreach ($filesToLoad as $file) {
             // Add needed database structure and file extension.
             $file = __DIR__ . '/../' . $file . '.php';
             // If file exists, include.
@@ -179,8 +178,7 @@ class CmsharenjoyServiceProvider extends ServiceProvider {
     protected function setServices()
     {
         // For papertrail
-        if ($this->app->environment() == 'production')
-        {
+        if ($this->app->environment() == 'production') {
             $siteName  = str_replace(['http://', 'https://'], '', $this->app['config']->get('app.url'));
             $monolog   = Log::getMonolog();
             $syslog    = new \Monolog\Handler\SyslogHandler($siteName);
@@ -197,7 +195,7 @@ class CmsharenjoyServiceProvider extends ServiceProvider {
 	 */
 	public function provides()
 	{
-		return array();
+		return [];
 	}
 
 }

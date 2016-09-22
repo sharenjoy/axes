@@ -11,18 +11,25 @@
 |
 */
 Route::group(['middleware' => ['web']], function () use ($accessUrl) {
-    
+
     // Backend
-    Route::group(['prefix' => $accessUrl], function() {
+    Route::group(['prefix' => $accessUrl], function() use ($accessUrl) {
+
+        // content language
+        Route::get('specify-content-language/{lang}', function($lang) use ($accessUrl) {
+            session()->put('cmsharenjoy.language', $lang);
+            return redirect($accessUrl);
+        });
+
         Route::controller('filer'     , 'Sharenjoy\Cmsharenjoy\Filer\FilerController');
         Route::controller('user'      , 'Sharenjoy\Cmsharenjoy\User\UserController');
         Route::controller('setting'   , 'Sharenjoy\Cmsharenjoy\Setting\SettingController');
         Route::controller(''          , 'Sharenjoy\Cmsharenjoy\Http\Controllers\DashController');
     });
 
-    Route::get($accessUrl.'/language/{lang}' , function ($lang) {
+    Route::get('language/{lang}' , function ($lang) {
         if (array_key_exists($lang, config('cmsharenjoy.locales'))) {
-            Session::put('sharenjoy.backEndLanguage', $lang);
+            session()->put('sharenjoy.backEndLanguage', $lang);
             return redirect()->back();
         }
     });
