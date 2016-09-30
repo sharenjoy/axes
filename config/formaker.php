@@ -49,6 +49,43 @@ return [
      */
     
     /*
+        'product_info'   => [
+            'order' => '80',
+            'type' => 'inner',
+            'inner-div' => ['class'=>'col-sm-5'],
+            'rwd-class' => 'col-sm-3',
+            'columns' => [
+                'weight' => ['label-class' => 'col-sm-12', 'inner-div' => ['class'=>'col-sm-12']],
+                'length' => ['label-class' => 'col-sm-12', 'inner-div' => ['class'=>'col-sm-12']],
+                'width'  => ['label-class' => 'col-sm-12', 'inner-div' => ['class'=>'col-sm-12']],
+                'height' => ['label-class' => 'col-sm-12', 'inner-div' => ['class'=>'col-sm-12']],
+            ]
+        ],
+        'price_info' => [
+            'order' => '90',
+            'type' => 'inner',
+            'inner-div' => ['class'=>'col-sm-5'],
+            'rwd-class' => 'col-sm-6',
+            'columns' => [
+                'price' => ['label-class' => 'col-sm-12', 'inner-div' => ['class'=>'col-sm-12']],
+                'cost'  => ['label-class' => 'col-sm-12', 'inner-div' => ['class'=>'col-sm-12']],
+            ]
+        ],
+        'pnb_one' => [
+            'order'    => '160',
+            'create'=>[], 'update'=>[],
+            'inner-div-class'=>'col-sm-7',
+            'type'     => 'duplicate',
+            'columns'  => [
+                'pnb_one_key_serialize' => ['duplicate-inner-div-class' => 'col-md-4', 'args'=>['name'=>'pnb_one_key_serialize[]']],
+                'pnb_one_value_serialize'   => ['duplicate-inner-div-class' => 'col-md-4', 'args'=>['name'=>'pnb_one_value_serialize[]']],
+                'pnb_one_price_serialize' => ['duplicate-inner-div-class' => 'col-md-4', 'args'=>['name'=>'pnb_one_price_serialize[]']],
+            ],
+            'relation'=>'fieldPnbOne',
+        ],
+     */
+    
+    /*
      * --------------------------------------------------------------------------
      *  Default Formaker Driver
      * --------------------------------------------------------------------------
