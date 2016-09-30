@@ -3184,6 +3184,7 @@ return array(
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FormInterface' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FormInterface.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\HiddenForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/HiddenForm.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\ImageForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/ImageForm.php',
+    'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\InnerForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/InnerForm.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\NoneForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/NoneForm.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\PasswordForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/PasswordForm.php',
     'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\RadioForm' => $vendorDir . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/RadioForm.php',

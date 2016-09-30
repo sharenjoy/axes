@@ -3555,6 +3555,7 @@ class ComposerStaticInit2c6c00b0d99d385951a38f469e154c31
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\FormInterface' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/FormInterface.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\HiddenForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/HiddenForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\ImageForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/ImageForm.php',
+        'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\InnerForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/InnerForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\NoneForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/NoneForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\PasswordForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/PasswordForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\RadioForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/RadioForm.php',
