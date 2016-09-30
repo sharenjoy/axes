@@ -1794,6 +1794,8 @@ return array(
     'League\\Flysystem\\PluginInterface' => $vendorDir . '/league/flysystem/src/PluginInterface.php',
     'League\\Flysystem\\Plugin\\AbstractPlugin' => $vendorDir . '/league/flysystem/src/Plugin/AbstractPlugin.php',
     'League\\Flysystem\\Plugin\\EmptyDir' => $vendorDir . '/league/flysystem/src/Plugin/EmptyDir.php',
+    'League\\Flysystem\\Plugin\\ForcedCopy' => $vendorDir . '/league/flysystem/src/Plugin/ForcedCopy.php',
+    'League\\Flysystem\\Plugin\\ForcedRename' => $vendorDir . '/league/flysystem/src/Plugin/ForcedRename.php',
     'League\\Flysystem\\Plugin\\GetWithMetadata' => $vendorDir . '/league/flysystem/src/Plugin/GetWithMetadata.php',
     'League\\Flysystem\\Plugin\\ListFiles' => $vendorDir . '/league/flysystem/src/Plugin/ListFiles.php',
     'League\\Flysystem\\Plugin\\ListPaths' => $vendorDir . '/league/flysystem/src/Plugin/ListPaths.php',
