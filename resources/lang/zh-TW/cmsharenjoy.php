@@ -214,12 +214,10 @@ return [
             'slug'                => '例如 google',
             'keyword'             => '請輸入您想要篩選的關鍵字',
             'video'               => 'https://youtu.be/VjcRoBkivrk',
+            'tag'                 => '點擊選取',
             'user' => [
                 'first_name'      => '請輸入您的名字',
                 'last_name'       => '請輸入您的姓',
-            ],
-            'post' => [
-                'tag'             => '點擊選取',
             ],
         ],
         
@@ -229,11 +227,9 @@ return [
             'album'               => '點開啟按鈕開啟相簿管理視窗。可管理附屬於此項目的相簿內容。',
             'filealbum'           => '點開啟按鈕開啟檔案管理視窗。可管理附屬於此項目的檔案內容。',
             'video'               => '請貼上Youtube影片分享連結',
+            'tag'                 => '可直接透過輸入對應的文字來搜尋',
             'user' => [
                 'first_name'      => '',
-            ],
-            'post' => [
-                'tag'             => '可直接透過輸入對應的文字來搜尋',
             ],
         ],
 
