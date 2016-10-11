@@ -76,7 +76,8 @@ class FlashMessageBag extends MessageBag {
                 $content = [
                     'error' => [
                         'title'   => pick_trans('fail'),
-                        'message' => $message ?: 'Bad Request'
+                        'message' => $message ?: 'Bad Request',
+                        'data'    => $data
                     ]
                 ];
                 break;
@@ -85,7 +86,8 @@ class FlashMessageBag extends MessageBag {
                 $content = [
                     'error' => [
                         'title'   => pick_trans('fail'),
-                        'message' => $message ?: 'Not found'
+                        'message' => $message ?: 'Not found',
+                        'data'    => $data
                     ]
                 ];
                 break;

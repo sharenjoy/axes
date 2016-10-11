@@ -112,12 +112,24 @@ if ( ! function_exists('langflag'))
 	}
 }
 
-if ( ! function_exists('current_lang'))
+if ( ! function_exists('current_locale'))
 {
-	function current_lang()
-	{
-		return Config::get('app.locale');
-	}
+    function current_locale()
+    {
+        return Config::get('app.locale');
+    }
+}
+
+if ( ! function_exists('current_backend_language'))
+{
+    function current_backend_language()
+    {
+        if (session()->has('cmsharenjoy.language') && !is_null(config('cmsharenjoy.language_default'))) {
+            return session('cmsharenjoy.language');
+        }
+
+        return null;
+    }
 }
 
 if ( ! function_exists('showActivated'))

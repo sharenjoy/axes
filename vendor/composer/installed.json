@@ -2454,40 +2454,6 @@
         "homepage": "http://laravelcollective.com"
     },
     {
-        "name": "sharenjoy/cmsharenjoy",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sharenjoy/cmsharenjoy.git",
-            "reference": "c73ae49b2dd3ffcc6ea0ea242257f4626083cfff"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/c73ae49b2dd3ffcc6ea0ea242257f4626083cfff",
-            "reference": "c73ae49b2dd3ffcc6ea0ea242257f4626083cfff",
-            "shasum": ""
-        },
-        "require": {
-            "laravel/framework": "~5.2"
-        },
-        "time": "2016-09-30 21:50:37",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Sharenjoy\\Cmsharenjoy\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "authors": [
-            {
-                "name": "Ronald Jian",
-                "email": "ronald.jian@gmail.com"
-            }
-        ]
-    },
-    {
         "name": "doctrine/dbal",
         "version": "v2.5.5",
         "version_normalized": "2.5.5.0",
@@ -4447,6 +4413,40 @@
         "homepage": "http://twig.sensiolabs.org",
         "keywords": [
             "templating"
+        ]
+    },
+    {
+        "name": "sharenjoy/cmsharenjoy",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sharenjoy/cmsharenjoy.git",
+            "reference": "6a33bc703dacec867247f7cfb8da65008ffc0732"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/6a33bc703dacec867247f7cfb8da65008ffc0732",
+            "reference": "6a33bc703dacec867247f7cfb8da65008ffc0732",
+            "shasum": ""
+        },
+        "require": {
+            "laravel/framework": "~5.2"
+        },
+        "time": "2016-10-11 00:20:23",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Sharenjoy\\Cmsharenjoy\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Ronald Jian",
+                "email": "ronald.jian@gmail.com"
+            }
         ]
     }
 ]

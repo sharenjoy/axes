@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -12,63 +12,77 @@ return array(
     | such as the size rules. Feel free to tweak each of these messages.
     |
     */
-    "accepted"         => ":attributeを承認してください。",
-    "active_url"       => ":attributeが有効なURLではありません。",
-    "after"            => ":attributeには、:date以降の日付を指定してください。",
-    "alpha"            => ":attributeはアルファベッドのみがご利用できます。",
-    "alpha_dash"       => ":attributeは英数字とダッシュ(-)及び下線(_)がご利用できます。",
-    "alpha_num"        => ":attributeは英数字がご利用できます。",
-    "array"            => ":attributeは配列でなくてはなりません。",
-    "before"           => ":attributeには、:date以前の日付をご利用ください。",
-    "between"          => array(
-        "numeric" => ":attributeは、:minから、:maxまでの数字をご指定ください。",
-        "file"    => ":attributeには、:min kBから:max kBまでのサイズのファイルをご指定ください。",
-        "string"  => ":attributeは、:min文字から:max文字の間でご指定ください。",
-        "array"   => ":attributeの個数は:min個から:max個でなくてはなりません。"
-    ),
-    "confirmed"        => ":attributeと、確認フィールドとが、一致していません。",
-    "date"             => ":attributeは正しい日付ではありません。",
-    "date_format"      => ":attributeのフォーマットは:formatと一致していません。",
-    "different"        => ":attributeと:otherには、異なった内容を指定してください。",
-    "digits"           => ":attributeは:digits桁でなければなりません。",
-    "digits_between"   => ":attributeは:min桁から:max桁でなければなりません。",
-    "email"            => ":attributeには正しいメールアドレスの形式をご指定ください。",
-    "exists"           => "選択された:attributeは正しくありません。",
-    "image"            => ":attributeには画像ファイルを指定してください。",
-    "in"               => "選択された:attributeは正しくありません。",
-    "integer"          => ":attributeは整数でご指定ください。",
-    "ip"               => ":attributeには、有効なIPアドレスをご指定ください。",
-    "max"              => array(
-        "numeric" => ":attributeには、:max以下の数字をご指定ください。",
-        "file"    => ":attributeには、:max kB以下のファイルをご指定ください。",
-        "string"  => ":attributeは、:max文字以下でご指定ください。",
-        "array"   => ":attributeの個数は:max個以下にしてください。"
-    ),
-    "mimes"            => ":attributeには:valuesタイプのファイルを指定してください。",
-    "min"              => array(
-        "numeric" => ":attributeには、:min以上の数字をご指定ください。",
-        "file"    => ":attributeには、:min kB以上のファイルをご指定ください。",
-        "string"  => ":attributeは、:min文字以上でご指定ください。",
-        "array"   => ":attributeの個数は:max個以上にしてください。"
-    ),
-    "not_in"           => "選択された:attributeは正しくありません。",
-    "numeric"          => ":attributeには、数字を指定してください。",
-    "regex"            => ":attributeのフォーマットは正しくありません。",
-    "required"         => ":attributeは必ず指定してください。",
-    "required_if"      => ":attributeは:otherが:valueの場合に必須となります。",
-    "required_with"    => ":attributeは:valuesが存在している場合に必須となります。",
-    "required_with_all" => ":attributeは:valuesが存在している場合に必須となります。",
-    "required_without" => ":attributeは:valuesが存在していない場合に必須となります。",
-    "required_without_all" => ":attributeは:valuesが存在していない場合に必須となります。",
-    "same"             => ":attributeと:otherには同じ値を指定してください。",
-    "size"             => array(
-        "numeric" => ":attributeには:sizeを指定してください。",
-        "file"    => ":attributeのファイルは、:sizeキロバイトでなくてはなりません。",
-        "string"  => ":attributeは:size文字で指定してください。",
-        "array"   => ":attributeは:size個含まれている必要があります。"
-    ),
-    "unique"           => ":attributeに指定された値は既に存在しています。",
-    "url"              => ":attributeのフォーマットが正しくありません。",
+
+    'accepted'   => ':attributeを承認してください。',
+    'active_url' => ':attributeは、有効なURLではありません。',
+    'after'      => ':attributeには、:date以降の日付を指定してください。',
+    'alpha'      => ':attributeには、アルファベッドのみ使用できます。',
+    'alpha_dash' => ":attributeには、英数字('A-Z','a-z','0-9')とハイフンと下線('-','_')が使用できます。",
+    'alpha_num'  => ":attributeには、英数字('A-Z','a-z','0-9')が使用できます。",
+    'array'      => ':attributeには、配列を指定してください。',
+    'before'     => ':attributeには、:date以前の日付を指定してください。',
+    'between'    => [
+        'numeric' => ':attributeには、:minから、:maxまでの数字を指定してください。',
+        'file'    => ':attributeには、:min KBから:max KBまでのサイズのファイルを指定してください。',
+        'string'  => ':attributeは、:min文字から:max文字にしてください。',
+        'array'   => ':attributeの項目は、:min個から:max個にしてください。',
+    ],
+    'boolean'              => ":attributeには、'true'か'false'を指定してください。",
+    'confirmed'            => ':attributeと:attribute確認が一致しません。',
+    'date'                 => ':attributeは、正しい日付ではありません。',
+    'date_format'          => ":attributeの形式は、':format'と合いません。",
+    'different'            => ':attributeと:otherには、異なるものを指定してください。',
+    'digits'               => ':attributeは、:digits桁にしてください。',
+    'digits_between'       => ':attributeは、:min桁から:max桁にしてください。',
+    'dimensions'           => 'The :attribute has invalid image dimensions.',
+    'distinct'             => 'The :attribute field has a duplicate value.',
+    'email'                => ':attributeは、有効なメールアドレス形式で指定してください。',
+    'exists'               => '選択された:attributeは、有効ではありません。',
+    'file'                 => 'The :attribute must be a file.',
+    'filled'               => ':attributeは必須です。',
+    'image'                => ':attributeには、画像を指定してください。',
+    'in'                   => '選択された:attributeは、有効ではありません。',
+    'in_array'             => 'The :attribute field does not exist in :other.',
+    'integer'              => ':attributeには、整数を指定してください。',
+    'ip'                   => ':attributeには、有効なIPアドレスを指定してください。',
+    'json'                 => ':attributeには、有効なJSON文字列を指定してください。',
+    'max'                  => [
+        'numeric' => ':attributeには、:max以下の数字を指定してください。',
+        'file'    => ':attributeには、:max KB以下のファイルを指定してください。',
+        'string'  => ':attributeは、:max文字以下にしてください。',
+        'array'   => ':attributeの項目は、:max個以下にしてください。',
+    ],
+    'mimes'                => ':attributeには、:valuesタイプのファイルを指定してください。',
+    'mimetypes'            => ':attributeには、:valuesタイプのファイルを指定してください。',
+    'min'                  => [
+        'numeric' => ':attributeには、:min以上の数字を指定してください。',
+        'file'    => ':attributeには、:min KB以上のファイルを指定してください。',
+        'string'  => ':attributeは、:min文字以上にしてください。',
+        'array'   => ':attributeの項目は、:max個以上にしてください。',
+    ],
+    'not_in'               => '選択された:attributeは、有効ではありません。',
+    'numeric'              => ':attributeには、数字を指定してください。',
+    'present'              => 'The :attribute field must be present.',
+    'regex'                => ':attributeには、有効な正規表現を指定してください。',
+    'required'             => ':attributeは、必ず指定してください。',
+    'required_if'          => ':otherが:valueの場合、:attributeを指定してください。',
+    'required_unless'      => ':otherが:value以外の場合、:attributeを指定してください。',
+    'required_with'        => ':valuesが指定されている場合、:attributeも指定してください。',
+    'required_with_all'    => ':valuesが全て指定されている場合、:attributeも指定してください。',
+    'required_without'     => ':valuesが指定されていない場合、:attributeを指定してください。',
+    'required_without_all' => ':valuesが全て指定されていない場合、:attributeを指定してください。',
+    'same'                 => ':attributeと:otherが一致しません。',
+    'size'                 => [
+        'numeric' => ':attributeには、:sizeを指定してください。',
+        'file'    => ':attributeには、:size KBのファイルを指定してください。',
+        'string'  => ':attributeは、:size文字にしてください。',
+        'array'   => ':attributeの項目は、:size個にしてください。',
+    ],
+    'string'   => ':attributeには、文字を指定してください。',
+    'timezone' => ':attributeには、有効なタイムゾーンを指定してください。',
+    'unique'   => '指定の:attributeは既に使用されています。',
+    'uploaded' => 'The :attribute failed to upload.',
+    'url'      => ':attributeは、有効なURL形式で指定してください。',
 
     /*
     |--------------------------------------------------------------------------
@@ -81,11 +95,11 @@ return array(
     |
     */
 
-    'custom' => array(
-        'attribute-name' => array(
+    'custom' => [
+        'attribute-name' => [
             'rule-name' => 'custom-message',
-        ),
-    ),
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -98,6 +112,6 @@ return array(
     |
     */
 
-    'attributes' => array(),
+    'attributes' => [],
 
-);
+];
