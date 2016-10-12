@@ -178,6 +178,17 @@ trait CommonModelTrait {
                 {
                     $formConfig[$name]['value'] = $input[$name];
                 }
+
+                if (isset($config['columns']))
+                {
+                    foreach ($config['columns'] as $columnName => $columnValue)
+                    {
+                        if (isset($input[$columnName]))
+                        {
+                            $formConfig[$name]['columns'][$columnName]['value'] = $input[$columnName];
+                        }
+                    }
+                }
             }
         }
         

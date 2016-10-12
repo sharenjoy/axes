@@ -6,16 +6,15 @@ class StatusList extends ListAbstract implements ListInterface {
     {
         $content = '<td align="'.$config['align'].'" width="'.$config['width'].'">';
         
-        if ($item->$column)
+        if (isset($item->{$column}))
         {
-            if ($item->$column == 1)
+            if ($item->{$column} == 1)
             {
                 $content .= '<i class="fa fa-check text-success"></i><br>'.trans('option.enable');
             }
-            elseif ($item->$column == 2)
+            elseif ((int)$item->{$column} === 0)
             {
                 $content .= '<i class="fa fa-times text-danger"></i><br>'.trans('option.disable');
-
             }
         }
         else
