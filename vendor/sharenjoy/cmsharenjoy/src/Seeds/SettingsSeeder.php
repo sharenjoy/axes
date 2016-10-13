@@ -40,7 +40,7 @@ class SettingsSeeder extends Seeder {
                 'type'          => 'text',
                 'value'         => '4',
                 'module'        => 'file',
-                'hidden'        => true,
+                'hidden'        => false,
                 'sort'          => '4',
                 'created_at'    => date('Y-m-d H:i:s')
             ],
