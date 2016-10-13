@@ -51,27 +51,6 @@ class Post extends EloquentBaseModel
         'status_id'    => ['order' => '90', 'type' =>'radio', 'option'=>'status', 'value'=>'1'],
     ];
 
-    public function fieldTags($id)
-    {
-        $content['value'] = $id != '' ? $this->find($id)->tags->implode('id', ',') : '';
-        $content['option'] = $this->grabTagLists()->toArray();
-
-        return $content;
-    }
-
-    public function eventSyncToTags($key, $model)
-    {
-        if ( ! isset(self::$inputData['tag'])) return;
-
-        if (empty(self::$inputData['tag'])) {
-            return $model->tags()->detach();
-        }
-
-        $data = explode(',', self::$inputData['tag']);
-        
-        return $model->tags()->sync($data);
-    }
-
     public function eventSelectedType($key, $model)
     {
         if ($model) {

@@ -34,6 +34,28 @@ trait TaggableTrait
     {
         $model->untag();
     }
+
+    /**
+     * sync tagger
+     *
+     * @param  string $key   field
+     * @param  model $model eloquent model
+     *
+     * @return model
+     */
+    public function eventSyncToTags($key, $model)
+    {
+        if ( ! isset(self::$inputData['tag'])) return;
+
+        if (empty(self::$inputData['tag']))
+        {
+            return $model->tags()->detach();
+        }
+
+        $data = explode(',', self::$inputData['tag']);
+        
+        return $model->tags()->sync($data);
+    }
 	
 	/**
 	 * Perform the action of tagging the model with the given string
@@ -214,6 +236,14 @@ trait TaggableTrait
 		
 		return $query;
 	}
+
+	public function fieldTags($id)
+    {
+        $content['value'] = $id != '' ? $this->find($id)->tags->implode('id', ',') : '';
+        $content['option'] = $this->grabTagLists()->toArray();
+
+        return $content;
+    }
 
 	public function grabTagLists()
 	{
