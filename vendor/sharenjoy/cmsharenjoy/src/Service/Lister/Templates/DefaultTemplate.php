@@ -6,7 +6,7 @@ class DefaultTemplate extends TemplateAbstract implements TemplateInterface {
     
     protected $data;
 
-    protected $template = '<table class="table table-bordered table-hover table-responsive"{sortable}>
+    protected $template = '<table class="table table-bordered table-hover"{sortable}>
                                {thead}
                                {tbody}
                                {tfoot}

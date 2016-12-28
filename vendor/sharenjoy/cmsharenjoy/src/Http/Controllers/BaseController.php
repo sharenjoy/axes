@@ -25,12 +25,6 @@ abstract class BaseController extends Controller
     protected $accessUrl;
 
     /**
-     * The brand name
-     * @var string
-     */
-    protected $brandName;
-
-    /**
      * To manage some function that can open or not
      * @var array
      */
@@ -123,6 +117,7 @@ abstract class BaseController extends Controller
         $this->setHandyUrls();
         $this->setContentLanguage();
         $this->parseMenuItems();
+        $this->setSettings();
     }
 
     protected function setCommonVariable()
@@ -157,11 +152,6 @@ abstract class BaseController extends Controller
             view()->share('onAction', $this->onAction);
         }
 
-        // Brand name from setting
-        $this->brandName = Setting::get('brand_name');
-        
-        // Share some variables to views
-        view()->share('brandName'     , $this->brandName);
         view()->share('functionRules' , $this->functionRules);
         view()->share('langLocales'   , config('cmsharenjoy.locales'));
         view()->share('activeLanguage', session('sharenjoy.backEndLanguage'));
@@ -176,9 +166,9 @@ abstract class BaseController extends Controller
     protected function getAuthInfo()
     {
         // Get the login user
-        if (Auth::check())
+        if (Auth::guard('admin')->check())
         {
-            $this->user = Auth::user();
+            $this->user = Auth::guard('admin')->user();
 
             session()->put('user', $this->user->toArray());
             view()->share('user', $this->user->toArray());
@@ -279,6 +269,11 @@ abstract class BaseController extends Controller
         view()->share('masterMenu', $masterMenu);
         view()->share('subMenu', $subMenu);
         view()->share('menuItems', $menuItems);
+    }
+
+    protected function setSettings()
+    {
+        session()->put('cmsharenjoy.settings', Setting::all());
     }
 
     protected function getModuleNamespace()

@@ -1,7 +1,7 @@
 @extends('admin.layouts.login')
 
 @section('title')
-{{pick_trans('reset_password')}} - {{$brandName}}
+{{pick_trans('reset_password')}} - {{session('cmsharenjoy.settings.general.brand_name')}}
 @stop
 
 @section('content')

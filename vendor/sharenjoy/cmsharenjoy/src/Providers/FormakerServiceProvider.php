@@ -3,7 +3,7 @@
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 use Sharenjoy\Cmsharenjoy\Service\Formaker\TwitterBootstrapV3;
-use Session;
+use Request;
 
 class FormakerServiceProvider extends ServiceProvider {
 
@@ -22,7 +22,10 @@ class FormakerServiceProvider extends ServiceProvider {
      */
     protected function registerFormakerTransport()
     {
-        $end = Session::get('sharenjoy.whichEnd');
+        $accessUrl = $this->app['config']->get('cmsharenjoy.access_url');
+        
+        // To define which end it is now
+        $end = Request::segment(1) == $accessUrl ? 'backEnd' : 'frontEnd';
 
         $config = $this->app['config']->get('formaker');
 

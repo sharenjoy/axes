@@ -54,9 +54,11 @@ class SettingController extends BaseController {
     protected function item()
     {
         $model = $this->repo->getModel();
+        $modules = $model->select('module')->groupBy('module')->orderBy('id')->pluck('module')->toArray();
 
-        $items['general']['item'] = $model->where('module', 'general')->orderBy('sort')->get();
-        $items['file']['item']    = $model->where('module', 'file')->orderBy('sort')->get();
+        foreach ($modules as $module) {
+            $items[$module]['item'] = $model->where('module', $module)->whereHidden(false)->orderBy('sort')->get();
+        }
 
         return $items;
     }

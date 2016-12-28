@@ -42,7 +42,15 @@
                 </a>
             </div>
             @endif
-            
+
+            @if(isset($functionRules['import']) AND $functionRules['import'] == true)
+            <div class="pull-left">
+                <a href="{{$objectUrl}}/import" class="btn btn-default btn-icon icon-left">
+                    <i class="fa fa-flask"></i>{{pick_trans('buttons.import')}}
+                </a>
+            </div>
+            @endif
+
             @if(isset($functionRules['order']) AND $functionRules['order'] == true)
             <div class="pull-left">
                 <a href="{{$sortUrl}}" class="btn btn-default btn-icon icon-left">
@@ -60,7 +68,7 @@
 
                     {!!$filterForm!!}
 
-                    <div class="list-filter col-md-3 col-sm-6">
+                    <div class="{{config('formaker.backEnd.TwitterBootstrapV3.filter-class')}}">
                         {!!Form::hidden('filter', 'true')!!}
                         {!!Request::has('perPage') ? Form::hidden('perPage', Request::query('perPage')) : ''!!}
                         {!!Form::label('')!!}<br>

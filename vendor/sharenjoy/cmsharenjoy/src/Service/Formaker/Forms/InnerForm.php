@@ -15,7 +15,8 @@ class InnerForm extends FormAbstract implements FormInterface
             $formaker = new TwitterBootstrapV3('backEnd');
 
             foreach ($data['others']['setting']['columns'] as $field => $args) {
-                $form .= '<div class="'.$data['others']['setting']['rwd-class'].'">'.$formaker->{$field}($args).'</div>';
+                $rwd = isset($args['rwd-class']) ? $args['rwd-class'] : $data['others']['setting']['rwd-class'];
+                $form .= '<div class="'.$rwd.'">'.$formaker->{$field}($args).'</div>';
             }
         }
 

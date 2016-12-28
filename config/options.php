@@ -14,7 +14,7 @@ return [
 
     'status' => [
         '1' => 'option.enable',
-        '0' => 'option.disable',
+        '2' => 'option.disable',
     ],
 
     'process' => [

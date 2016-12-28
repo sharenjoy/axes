@@ -182,7 +182,7 @@ abstract class ObjectBaseController extends BaseController {
      */
     public function postUpdate(Request $request, $id)
     {
-        $this->repo->setInput($request->all());
+        $this->repo->setInput($request->all(), $id);
 
         if ( ! $this->repo->validate($id))
         {

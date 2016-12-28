@@ -132,6 +132,30 @@ if ( ! function_exists('current_backend_language'))
     }
 }
 
+if ( ! function_exists('current_language'))
+{
+    function current_language()
+    {
+        $whichEnd = session()->get('sharenjoy.whichEnd');
+        
+        if ($whichEnd == 'backEnd') {
+            return current_backend_language();
+        } elseif ($whichEnd == 'frontEnd') {
+            if (config('cmsharenjoy.language_default')) {
+                $language = config('cmsharenjoy.language_default');
+
+                if (array_key_exists(strtolower(Request::segment(1)), config('cmsharenjoy.language'))) {
+                    $language = strtolower(Request::segment(1));
+                }
+
+                return $language;
+            }
+        }
+
+        return null;
+    }
+}
+
 if ( ! function_exists('showActivated'))
 {
 	function showActivated()
@@ -578,6 +602,10 @@ if ( ! function_exists('img_resize'))
         $path      = config('filer.path');
         $thumbPath = config('filer.thumbPath');
 
+        if (! $filename) {
+            return;
+        }
+        
         $imageInfo      = pathinfo($filename);
         $targetFilename = "{$imageInfo['filename']}_{$width}x{$height}.{$imageInfo['extension']}";
 

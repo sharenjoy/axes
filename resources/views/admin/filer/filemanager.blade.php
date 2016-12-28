@@ -249,6 +249,7 @@
                 parent.modal_hide('#modal-filemanager');
                 $parent.find('img').attr('src', file);
                 $parent.find('input').attr('value', name);
+                $parent.parent().parent().find(".fileinput-remove").css('display', 'block');
             });
 
             $modal_delete_file.on('click', '.delete-button', function(){

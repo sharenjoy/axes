@@ -48,4 +48,19 @@ class SettingRepository extends EloquentBaseRepository implements SettingInterfa
         return $result;
     }
 
+    /**
+     * get all the items sort by module
+     * @return array
+     */
+    public function all()
+    {
+        $items = $this->model->orderBy('sort')->get()->groupBy('module')->all();
+
+        foreach ($items as $key => $item) {
+            $items[$key] = $item->pluck('value', 'key')->toArray();
+        }
+
+        return $items;
+    }
+
 }

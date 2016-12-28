@@ -34,7 +34,7 @@ class DashController extends BaseController
      */
     public function getLogout()
     {
-        Auth::logout();
+        Auth::guard('admin')->logout();
 
         Session::flush();
 
@@ -52,7 +52,7 @@ class DashController extends BaseController
     public function getLogin()
     {
         // If logged in, redirect to admin area
-        if (Auth::check())
+        if (Auth::guard('admin')->check())
         {
             return redirect($this->accessUrl);
         }

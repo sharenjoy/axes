@@ -12,7 +12,7 @@ class StatusList extends ListAbstract implements ListInterface {
             {
                 $content .= '<i class="fa fa-check text-success"></i><br>'.trans('option.enable');
             }
-            elseif ((int)$item->{$column} === 0)
+            elseif ($item->{$column} == 2)
             {
                 $content .= '<i class="fa fa-times text-danger"></i><br>'.trans('option.disable');
             }

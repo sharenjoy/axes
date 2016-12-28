@@ -34,6 +34,8 @@ trait CommonModelTrait {
             $input['language'] = session('cmsharenjoy.language');
         }
 
+        $input = $this->setTranslatableFields($input);
+
         self::$inputData = $input;
     }
 
@@ -91,6 +93,19 @@ trait CommonModelTrait {
             }
         }
         
+        return $input;
+    }
+
+    protected function setTranslatableFields($input)
+    {
+        if (property_exists($this, 'translatable')) {
+            foreach ($this->translatable as $field) {
+                if (isset($input[$field])) {
+                    $input[$field] = $this->setTranslation($field, current_backend_language(), $input[$field]);
+                }
+            }
+        }
+
         return $input;
     }
 
@@ -187,11 +202,31 @@ trait CommonModelTrait {
                         {
                             $formConfig[$name]['columns'][$columnName]['value'] = $input[$columnName];
                         }
+
+                        if (property_exists($this, 'translatable')) {
+                            if (in_array($columnName, $this->translatable)) {
+                                if (isset($input[$columnName][current_backend_language()])) {
+                                    $formConfig[$name]['columns'][$columnName]['value'] = $input[$columnName][current_backend_language()];
+                                } else {
+                                    $formConfig[$name]['columns'][$columnName]['value'] = null;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                if (property_exists($this, 'translatable')) {
+                    if (in_array($name, $this->translatable)) {
+                        if (isset($input[$name][current_backend_language()])) {
+                            $formConfig[$name]['value'] = $input[$name][current_backend_language()];
+                        } else {
+                            $formConfig[$name]['value'] = null;
+                        }
                     }
                 }
             }
         }
-        
+
         return $formConfig;
     }
 

@@ -38,12 +38,12 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'members',
         ],
 
-        'backend' => [
+        'admin' => [
             'driver' => 'session',
-            'provider' => 'backend_users',
+            'provider' => 'users',
         ],
 
         'api' => [
@@ -70,12 +70,12 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'members' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Modules\Member\Member::class,
         ],
 
-        'backend_users' => [
+        'users' => [
             'driver' => 'eloquent',
             'model' => Sharenjoy\Cmsharenjoy\User\User::class,
         ],
@@ -107,7 +107,7 @@ return [
 
     'passwords' => [
         'users' => [
-            'provider' => 'users',
+            'provider' => 'members',
             'email' => 'auth.emails.password',
             'table' => 'password_resets',
             'expire' => 60,

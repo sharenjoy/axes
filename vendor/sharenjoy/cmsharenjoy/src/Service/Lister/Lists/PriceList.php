@@ -11,8 +11,12 @@ class PriceList extends ListAbstract implements ListInterface {
     {
         $content = '<td align="'.$config['align'].'" width="'.$config['width'].'">';
         
-        $content .= number_format($item->{$column});
-        
+        if (isset($config['relations'])) {
+            $content .= number_format((int)array_get($item->toArray(), $config['relations']));
+        } else {
+            $content .= number_format((int)$item->{$column});
+        }
+
         $content .= '</td>';
 
         return $content;

@@ -38,9 +38,13 @@ abstract class EloquentBaseRepository implements EloquentBaseInterface {
      * Set the form input
      * @param array $input
      */
-    public function setInput(array $input)
+    public function setInput(array $input, $id = null)
     {
-        $this->model->setInput($input);
+        if ($id) {
+            $this->model->find($id)->setInput($input);
+        } else {
+            $this->model->setInput($input);
+        }
 
         return $this;
     }

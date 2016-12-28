@@ -26,9 +26,9 @@ EOE;
                         <span class="fileinput-new">{$select_image}</span>
                         <span class="fileinput-exists">{$change}</span>
                     </span>
-                    <a href="#" class="btn btn-orange fileinput-exists" data-dismiss="fileinput">{$remove}</a>
                 </div>
             </div>
+            <a href="#" class="btn btn-orange fileinput-remove" style="display: none; width: 60px" data-target="image-{$name}">{$remove}</a>
 EOE;
 
         set_package_asset_to_view('file-picker-reload');

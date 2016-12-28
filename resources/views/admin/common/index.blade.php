@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     
-                    <div id="list-table">
+                    <div id="list-table" class="table-responsive">
                         {!!$lister!!}
                     </div>
                     

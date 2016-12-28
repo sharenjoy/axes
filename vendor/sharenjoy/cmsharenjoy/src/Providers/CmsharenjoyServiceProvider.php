@@ -48,13 +48,6 @@ class CmsharenjoyServiceProvider extends ServiceProvider
             $this->mergeConfigFrom(__DIR__.'/../../config/'.$cfg.'.php', $cfg);
         }
 
-        $accessUrl = $this->app['config']->get('cmsharenjoy.access_url');
-        
-        // To define which end it is now
-        $whichEnd = Request::segment(1) == $accessUrl ? 'backEnd' : 'frontEnd';
-        
-        session()->put('sharenjoy.whichEnd', $whichEnd);
-
         // Binding a bunch of repository
         $this->bindRepository();
     }
@@ -127,6 +120,11 @@ class CmsharenjoyServiceProvider extends ServiceProvider
 
         // backend prefix
         $accessUrl = $this->app['config']->get('cmsharenjoy.access_url');
+        
+        // To define which end it is now
+        $whichEnd = Request::segment(1) == $accessUrl ? 'backEnd' : 'frontEnd';
+        
+        session()->put('sharenjoy.whichEnd', $whichEnd);
 
         // Make some alias
         $this->makeAlias();

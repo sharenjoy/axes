@@ -196,7 +196,7 @@ class UserRepository extends EloquentBaseRepository implements UserInterface
                 // Attempt to reset the user password
                 if ($user->attemptResetPassword($input['code'], $input['password']))
                 {
-                    Auth::logout();
+                    Auth::guard('admin')->logout();
                     return ['status'=>true, 'message'=>pick_trans('password_reset_success')];
                 }
                 else
@@ -222,9 +222,9 @@ class UserRepository extends EloquentBaseRepository implements UserInterface
             'password' => $input['password'],
         );
 
-        if (Auth::attempt($credentials)) {
-            if (Auth::user()->activated == false) {
-                Auth::logout();
+        if (Auth::guard('admin')->attempt($credentials)) {
+            if (Auth::guard('admin')->user()->activated == false) {
+                Auth::guard('admin')->logout();
                 return ['status'=>false, 'message'=>pick_trans('invalid_email_password')];
             }
 

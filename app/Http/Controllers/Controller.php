@@ -16,12 +16,6 @@ class Controller extends BaseController
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
     /**
-     * The brand name
-     * @var string
-     */
-    protected $brandName;
-
-    /**
      * The controller active right away
      * @var string
      */
@@ -67,6 +61,7 @@ class Controller extends BaseController
         $this->setCommonVariable();
         $this->getAuthInfo();
         $this->setLanguage();
+        $this->setSettings();
     }
 
     protected function setCommonVariable()
@@ -101,11 +96,6 @@ class Controller extends BaseController
             view()->share('onAction', $this->onAction);
         }
 
-        // Brand name from setting
-        $this->brandName = Setting::get('brand_name');
-        
-        // Share some variables to views
-        view()->share('brandName'     , $this->brandName);
         view()->share('langLocales'   , config('cmsharenjoy.locales'));
         view()->share('activeLanguage', session('sharenjoy.backEndLanguage'));
 
@@ -139,6 +129,11 @@ class Controller extends BaseController
 
             session()->put('content-language', $this->language);
         }
+    }
+
+    protected function setSettings()
+    {
+        session()->put('cmsharenjoy.settings', Setting::all());
     }
 
     protected function getModuleNamespace()

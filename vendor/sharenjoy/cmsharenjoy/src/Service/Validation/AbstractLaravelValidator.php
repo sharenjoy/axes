@@ -243,6 +243,8 @@ abstract class AbstractLaravelValidator implements ValidableInterface {
      */
     public function valid(array $input, $errorType)
     {
+        $input = $this->parseTranslationFields($input);
+
         $result = $this->with($input)->passes();
 
         if ( ! $result)
@@ -269,6 +271,23 @@ abstract class AbstractLaravelValidator implements ValidableInterface {
         }
         
         return $result;
+    }
+
+    protected function parseTranslationFields(array $input)
+    {
+        $action = session('onAction');
+
+        if (property_exists($this, 'translatable') && ($action == 'create' || $action == 'update')) {
+            foreach ($this->translatable as $name) {
+                if (isset($input[$name][current_backend_language()])) {
+                    $input[$name] = $input[$name][current_backend_language()];
+                } else {
+                    $input[$name] = null;
+                }
+            }
+        }
+
+        return $input;
     }
 
 }
