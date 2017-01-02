@@ -21,6 +21,7 @@ class Authenticate
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
+                \Message::warning('需先登入會員！<br>如果您還沒有會員，簡單一個步驟即可申請完成喔！');
                 return redirect()->guest('login');
             }
         }
