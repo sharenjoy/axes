@@ -19,7 +19,7 @@ trait HasTranslations
             return parent::getAttributeValue($key);
         }
 
-        return $this->getTranslation($key, current_backend_language());
+        return $this->getTranslation($key, current_language());
     }
 
     /**

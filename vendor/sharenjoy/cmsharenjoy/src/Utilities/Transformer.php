@@ -1,7 +1,9 @@
-<?php namespace Sharenjoy\Cmsharenjoy\Utilities;
+<?php
 
-class Transformer {
-    
+namespace Sharenjoy\Cmsharenjoy\Utilities;
+
+class Transformer
+{
     public function __construct()
     {
         
@@ -20,15 +22,20 @@ class Transformer {
     //     ];
     // }
 
-    public static function title(array $item)
+    public static function title($model)
     {
-        $existsAry = ['title', 'name', 'subject', 'tag', 'sn'];
+        $existsAry = ['title', 'name', 'subject', 'tag'];
 
         foreach ($existsAry as $value)
         {
-            if (array_key_exists($value, $item))
-            {
-                return $item[$value];
+            if (isset($model[$value])) {
+                return $model[$value];
+            } else {
+                if (method_exists($model, 'getReflection')) {
+                    return $model->getReflection()->getShortName().'-'.$model->id;
+                }
+
+                return get_class($model).'-'.$model->id;
             }
         }
 

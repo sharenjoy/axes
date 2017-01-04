@@ -11,13 +11,14 @@ class FileForm extends FormAbstract implements FormInterface {
         $select_image  = pick_trans('buttons.select_file');
         $change        = pick_trans('buttons.change');
         $remove        = pick_trans('buttons.remove');
+        $fileUrl       = url('packages/sharenjoy/cmsharenjoy/images/file_bg.jpg');
         $form          = <<<EOE
             <div class="fileinput fileinput-new file-pick-open-manager">
                 <div data-type="file" class="fileinput-new thumbnail" id="file-{$name}" style="width: 100px; height: 100px;">
 EOE;
         $form         .= '<input type="hidden" name="'.$name.'" value="'.$value.'">';
         $form         .= <<<EOE
-                    <img src="http://placehold.it/100&text=FILE">
+                    <img src="{$fileUrl}">
                 </div>
                 <div>
                     <span class="btn btn-white btn-file">

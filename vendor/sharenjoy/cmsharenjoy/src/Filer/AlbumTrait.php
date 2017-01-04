@@ -1,18 +1,21 @@
-<?php namespace Sharenjoy\Cmsharenjoy\Filer;
+<?php
 
-use Sharenjoy\Cmsharenjoy\Utilities\Transformer;
+namespace Sharenjoy\Cmsharenjoy\Filer;
+
 use Event, Filer;
+use Sharenjoy\Cmsharenjoy\Filer\Folder;
+use Sharenjoy\Cmsharenjoy\Utilities\Transformer;
 
-trait AlbumTrait {
-
+trait AlbumTrait
+{
     public function album()
     {
-        return $this->belongsTo('Sharenjoy\Cmsharenjoy\Filer\Folder', 'album_id');
+        return $this->belongsTo(Folder::class, 'album_id');
     }
 
     public function eventAlbum($key, $model)
     {
-        $title = Transformer::title($model->toArray());
+        $title = Transformer::title($model);
 
         $result = Filer::createFolder(0, $title, 'local', '', 1);
         $model->album_id = $result['data']['id'];
