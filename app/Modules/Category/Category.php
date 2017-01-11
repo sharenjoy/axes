@@ -49,11 +49,11 @@ class Category extends EloquentBaseModel
         {
             $model->eventProcess('deleting', $model);
 
-            // if delete the parent also delete the children
-            $model->children()->delete();
+            // if delete the parent also delete the child
+            $model->child()->delete();
 
             // use soft delete so do not want to detach
-            // $model->children()->detach();
+            // $model->child()->detach();
             // $model->parents()->detach();
         });
 
@@ -61,8 +61,8 @@ class Category extends EloquentBaseModel
         {
             $model->eventProcess('restoring', $model);
 
-            // if restore the parent also restore all of the children
-            // $model->children()->restore();
+            // if restore the parent also restore all of the child
+            // $model->child()->restore();
         });
     }
 
@@ -73,7 +73,7 @@ class Category extends EloquentBaseModel
      */
     public function parents()
     {
-        return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_id', 'category_parent_id')->orderBy('sort');
+        return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_id', 'category_parent_id');
     }
 
     /**
@@ -84,6 +84,16 @@ class Category extends EloquentBaseModel
     public function children()
     {
         return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_parent_id', 'category_id')->orderBy('sort');
+    }
+
+    /**
+     * Category children.
+     *
+     * @return object
+     */
+    public function child()
+    {
+        return $this->belongsToMany('\App\Modules\Category\Category', 'category_hierarchy', 'category_parent_id', 'category_id');
     }
 
     /**
