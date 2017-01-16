@@ -125,7 +125,7 @@ class Category extends EloquentBaseModel
      * @param  CategoryInterface $category
      * @return object
      */
-    public function makeChildOf(CategoryInterface $category)
+    public function makeChildOf($category)
     {
         $this->save();
         $this->parents()->sync(array($category->getKey()));

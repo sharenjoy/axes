@@ -29,6 +29,10 @@ class Transformer
         foreach ($existsAry as $value)
         {
             if (isset($model[$value])) {
+                if (is_array($model[$value]) && $model[$value][current_backend_language()]) {
+                    return $model[$value][current_backend_language()];
+                }
+
                 return $model[$value];
             } else {
                 if (method_exists($model, 'getReflection')) {

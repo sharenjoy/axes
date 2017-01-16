@@ -1,10 +1,13 @@
-<?php namespace Sharenjoy\Cmsharenjoy\Service\Validation;
+<?php
 
+namespace Sharenjoy\Cmsharenjoy\Service\Validation;
+
+use App, Message;
+use StdClass, Lang, Session;
 use Illuminate\Validation\Factory;
-use App, Message, StdClass, Lang, Session;
 
-abstract class AbstractLaravelValidator implements ValidableInterface {
-
+abstract class AbstractLaravelValidator implements ValidableInterface
+{
     /**
      * Validator
      * @var \Illuminate\Validation\Factory
@@ -61,6 +64,11 @@ abstract class AbstractLaravelValidator implements ValidableInterface {
     {
         if (is_string($rule))
         {
+            if (method_exists($this, $rule)) {
+                $this->rules = $this->{$rule}();
+                return $this;
+            }
+            
             if (isset($this->$rule))
                 $this->rules = $this->$rule;
             else
