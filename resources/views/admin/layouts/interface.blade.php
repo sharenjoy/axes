@@ -304,10 +304,18 @@
                 "APPURL": "{{Config::get('app.url')}}/{{$accessUrl}}/{{Session::get('onController')}}",
                 "OBJURL": "{{$objectUrl}}",
                 "SITEURL": "{{Config::get('app.url')}}",
+                "ADMINURL": "{{Config::get('app.url')}}/{{$accessUrl}}",
                 "BASEURI": "{{base_path()}}",
                 "PUBLICURI": "{{public_path()}}",
                 "csrf_token": "{{csrf_token()}}",
                 "csrf_token_crpyt": "{{Crypt::encrypt(csrf_token())}}",
+            };
+
+            sharenjoy.vue_http = {
+                root: sharenjoy.ADMINURL,
+                headers: {
+                    'X-XSRF-TOKEN': sharenjoy.csrf_token_crpyt
+                }
             };
             
             var opts = {

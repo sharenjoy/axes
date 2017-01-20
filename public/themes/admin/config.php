@@ -64,6 +64,7 @@ return array(
             $theme->asset()->add('neon-custom' , $pkg.'js/neon-custom.js');
             $theme->asset()->add('vue-js'      , $pkg.'js/vue/1.0.26/vue.js');
             // $theme->asset()->add('vue-js'      , $pkg.'js/vue/1.0.26/vue.min.js');
+            $theme->asset()->add('vue-resource-js', $pkg.'js/vue-resource/1.0.3/vue-resource.min.js');
             $theme->asset()->add('custom-js'   , $pkg.'js/sharenjoy/custom.js');
 
             // Breadcrumb template.
