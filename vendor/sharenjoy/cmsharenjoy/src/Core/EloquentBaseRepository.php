@@ -69,7 +69,7 @@ abstract class EloquentBaseRepository implements EloquentBaseInterface {
     {
         if ($id !== null)
         {
-            if (isset($this->validator->$rule))
+            if (isset($this->validator->$rule) || method_exists($this->validator, $rule))
             {
                 $this->validator->setRule($rule);
             }

@@ -599,19 +599,18 @@ if ( ! function_exists('img_resize'))
      */
     function img_resize($filename, $width, $height)
     {
-        $path      = config('filer.path');
-        $thumbPath = config('filer.thumbPath');
+        $path = config('filer.path');
+        $imagePath = public_path().$path.'/'.$filename;
 
-        if (! $filename) {
-            return;
+        if (! $filename || !file_exists($imagePath)) {
+            return null;
         }
-        
-        $imageInfo      = pathinfo($filename);
-        $targetFilename = "{$imageInfo['filename']}_{$width}x{$height}.{$imageInfo['extension']}";
 
-        $imagePath      = public_path().$path.'/'.$filename;
+        $imageInfo = pathinfo($filename);
+        $thumbPath = config('filer.thumbPath');
+        $targetFilename = "{$imageInfo['filename']}_{$width}x{$height}.{$imageInfo['extension']}";
         $thumbImagePath = public_path().$thumbPath.'/'.$targetFilename;
-        
+
         if (! file_exists($thumbImagePath)) {
             \Image::make($imagePath)->fit($width, $height)->save($thumbImagePath);
         }
