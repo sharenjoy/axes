@@ -1,10 +1,13 @@
-<?php namespace Sharenjoy\Cmsharenjoy\Service\Lister;
+<?php
 
-use Sharenjoy\Cmsharenjoy\Service\Lister\Templates\DefaultTemplate;
+namespace Sharenjoy\Cmsharenjoy\Service\Lister;
+
 use Config;
+use Sharenjoy\Cmsharenjoy\Service\Lister\Templates\GridTemplate;
+use Sharenjoy\Cmsharenjoy\Service\Lister\Templates\DefaultTemplate;
 
-class Lister extends ListerAbstract implements ListerInterface {
-
+class Lister extends ListerAbstract implements ListerInterface
+{
     /**
      * Make the list templates
      * @param array $items
