@@ -20,6 +20,10 @@ class Lister extends ListerAbstract implements ListerInterface {
                 $config = Config::get('lister.default');
                 $template = new DefaultTemplate();
                 break;
+            case 'grid':
+                $config = Config::get('lister.grid');
+                $template = new GridTemplate();
+                break;
         }
 
         $data = [
