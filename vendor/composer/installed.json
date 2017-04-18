@@ -805,12 +805,12 @@
         "version_normalized": "0.9.5.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/padraic/mockery.git",
+            "url": "https://github.com/mockery/mockery.git",
             "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/padraic/mockery/zipball/4db079511a283e5aba1b3c2fb19037c645e70fc2",
+            "url": "https://api.github.com/repos/mockery/mockery/zipball/4db079511a283e5aba1b3c2fb19037c645e70fc2",
             "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2",
             "shasum": ""
         },
@@ -4422,18 +4422,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/sharenjoy/cmsharenjoy.git",
-            "reference": "5721ef26ef4f3fb1c9fabc334297b0b654d7a905"
+            "reference": "1b043a54357a3dcba709cc600264ca2a173a0fa6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/5721ef26ef4f3fb1c9fabc334297b0b654d7a905",
-            "reference": "5721ef26ef4f3fb1c9fabc334297b0b654d7a905",
+            "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/1b043a54357a3dcba709cc600264ca2a173a0fa6",
+            "reference": "1b043a54357a3dcba709cc600264ca2a173a0fa6",
             "shasum": ""
         },
         "require": {
             "laravel/framework": "~5.2"
         },
-        "time": "2017-03-09T07:15:27+00:00",
+        "time": "2017-04-18T09:42:33+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {

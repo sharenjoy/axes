@@ -228,6 +228,10 @@ class UserRepository extends EloquentBaseRepository implements UserInterface
                 return ['status'=>false, 'message'=>pick_trans('invalid_email_password')];
             }
 
+            $user = Auth::guard('admin')->user();
+            $user->last_login = date('Y-m-d H:i:s');
+            $user->save();
+
             return ['status'=>true, 'message'=>pick_trans('success_login')];
         } else {
             return ['status'=>false, 'message'=>pick_trans('invalid_email_password')];
