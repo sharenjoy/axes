@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', function() {
+    return view('welcome');
+});
+
 Route::get('/',             'App\Http\Controllers\HomeController@index');
 Route::get('/about',        'App\Http\Controllers\HomeController@about');
 Route::get('/news',         'App\Http\Controllers\HomeController@news');
@@ -21,10 +25,6 @@ Route::get('/wheretobuy',   'App\Http\Controllers\HomeController@whereToBuy');
 Route::post('/contactus',   'App\Http\Controllers\HomeController@contactUs');
 Route::post('/search',      'App\Http\Controllers\HomeController@search');
 Route::get('/downloadfile/{filename}', 'App\Http\Controllers\HomeController@downloadFile');
-
-Route::get('/', function() {
-    return view('welcome');
-});
 
 /**
  * For the backend
