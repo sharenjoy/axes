@@ -4422,18 +4422,18 @@
         "source": {
             "type": "git",
             "url": "https://github.com/sharenjoy/cmsharenjoy.git",
-            "reference": "1b043a54357a3dcba709cc600264ca2a173a0fa6"
+            "reference": "fe8f65f615ce39fa9ae394503b130c3563c597a7"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/1b043a54357a3dcba709cc600264ca2a173a0fa6",
-            "reference": "1b043a54357a3dcba709cc600264ca2a173a0fa6",
+            "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/fe8f65f615ce39fa9ae394503b130c3563c597a7",
+            "reference": "fe8f65f615ce39fa9ae394503b130c3563c597a7",
             "shasum": ""
         },
         "require": {
             "laravel/framework": "~5.2"
         },
-        "time": "2017-04-18T09:42:33+00:00",
+        "time": "2017-05-22T14:13:26+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {

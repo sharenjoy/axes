@@ -2,23 +2,23 @@
 
 return [
 
-    'path'    => 'packages/sharenjoy/cmsharenjoy/',
+    'path'    => url('packages/sharenjoy/cmsharenjoy/'),
 
     'package' => [
 
         'ckeditor' => [
             'ckeditor'        => [
-                'file'  => 'js/ckeditor/ckeditor.js',
+                'file'  => '/js/ckeditor/ckeditor.js',
                 'type'  => 'script',
                 'queue' => false,
             ],
             'ckeditor-jquery' => [
-                'file'  => 'js/ckeditor/adapters/jquery.js',
+                'file'  => '/js/ckeditor/adapters/jquery.js',
                 'type'  => 'script',
                 'queue' => false,
             ],
             'ckeditor-custom' => [
-                'file'  => 'js/sharenjoy/ckeditor.js',
+                'file'  => '/js/sharenjoy/ckeditor.js',
                 'type'  => 'script',
                 'queue' => false,
             ],
@@ -26,7 +26,7 @@ return [
         
         'tag' => [
             'tag-input' => [
-                'file'  => 'js/bootstrap-tagsinput.min.js',
+                'file'  => '/js/bootstrap-tagsinput.min.js',
                 'type'  => 'script',
                 'queue' => false,
             ]
@@ -34,7 +34,7 @@ return [
 
         'multi-select-list' => [
             'multi-select-list-js' => [
-                'file'  => 'js/jquery.multi-select.js',
+                'file'  => '/js/jquery.multi-select.js',
                 'type'  => 'script',
                 'queue' => false,
             ]
@@ -42,12 +42,12 @@ return [
 
         'multi-select2' => [
             'multi-select2-js' => [
-                'file'  => 'js/select2/select2.min.js',
+                'file'  => '/js/select2/select2.min.js',
                 'type'  => 'script',
                 'queue' => false,
             ],
             'multi-select2-css' => [
-                'file'  => 'js/select2/select2.css',
+                'file'  => '/js/select2/select2.css',
                 'type'  => 'style',
                 'queue' => false,
             ]
@@ -55,7 +55,7 @@ return [
         
         'datepicker' => [
             'bootstrap-datepicker' => [
-                'file'  => 'js/bootstrap-datepicker.js',
+                'file'  => '/js/bootstrap-datepicker.js',
                 'type'  => 'script',
                 'queue' => false,
             ]
@@ -63,17 +63,17 @@ return [
         
         'daterange' => [
             'daterangepicker-css' => [
-                'file'  => 'js/daterangepicker/daterangepicker-bs3.css',
+                'file'  => '/js/daterangepicker/daterangepicker-bs3.css',
                 'type'  => 'style',
                 'queue' => false,
             ],
             'moment' => [
-                'file'  => 'js/daterangepicker/moment.min.js',
+                'file'  => '/js/daterangepicker/moment.min.js',
                 'type'  => 'script',
                 'queue' => false,
             ],
             'daterangepicker-js' => [
-                'file'  => 'js/daterangepicker/daterangepicker.js',
+                'file'  => '/js/daterangepicker/daterangepicker.js',
                 'type'  => 'script',
                 'queue' => false,
             ]
@@ -81,7 +81,7 @@ return [
 
         'colorpicker' => [
             'bootstrap-colorpicker' => [
-                'file'  => 'js/bootstrap-colorpicker.min.js',
+                'file'  => '/js/bootstrap-colorpicker.min.js',
                 'type'  => 'script',
                 'queue' => false,
             ]
@@ -89,7 +89,7 @@ return [
         
         'file-picker-reload' => [
             'file-input-extra' => [
-                'file'  => 'js/sharenjoy/file-picker-reload.js',
+                'file'  => '/js/sharenjoy/file-picker-reload.js',
                 'type'  => 'script',
                 'queue' => false,
             ]
@@ -97,7 +97,7 @@ return [
 
         'cloneya' => [
             'jquery-cloneya' => [
-                'file'  => 'js/jquery-cloneya/jquery-cloneya.min.js',
+                'file'  => '/js/jquery-cloneya/jquery-cloneya.min.js',
                 'type'  => 'script',
                 'queue' => false,
             ]
@@ -105,7 +105,7 @@ return [
 
         'jquery-confirm' => [
             'jquery-confirm' => [
-                'file'  => 'js/sharenjoy/jquery.confirm.min.js',
+                'file'  => '/js/sharenjoy/jquery.confirm.min.js',
                 'type'  => 'script',
                 'queue' => false,
             ]
@@ -113,17 +113,17 @@ return [
 
         'ladda-bootstrap' => [
             'ladda-themeless' => [
-                'file'  => 'js/ladda-bootstrap/dist/ladda-themeless.min.css',
+                'file'  => '/js/ladda-bootstrap/dist/ladda-themeless.min.css',
                 'type'  => 'style',
                 'queue' => false,
             ],
             'spin' => [
-                'file'  => 'js/ladda-bootstrap/dist/spin.min.js',
+                'file'  => '/js/ladda-bootstrap/dist/spin.min.js',
                 'type'  => 'script',
                 'queue' => false,
             ],
             'ladda' => [
-                'file'  => 'js/ladda-bootstrap/dist/ladda.min.js',
+                'file'  => '/js/ladda-bootstrap/dist/ladda.min.js',
                 'type'  => 'script',
                 'queue' => false,
             ]
