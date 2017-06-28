@@ -2,7 +2,7 @@
 
 return [
 
-    'path'    => url('packages/sharenjoy/cmsharenjoy/'),
+    'path'    => 'packages/sharenjoy/cmsharenjoy',
 
     'package' => [
 

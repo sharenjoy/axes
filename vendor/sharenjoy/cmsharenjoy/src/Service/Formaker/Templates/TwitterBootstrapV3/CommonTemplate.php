@@ -23,15 +23,17 @@ class CommonTemplate extends TemplateAbstract implements TemplateInterface {
     {
         $this->data = $data;
 
-        if (isset($data['setting']['label-inner']) && $data['setting']['label-inner'] === true)
-        {
+        if (isset($data['setting']['none-label']) && $data['setting']['none-label'] === true) {
             $data['label-outer'] = '';
-            $data['label-inner'] = $this->label();
-        }
-        else 
-        {
-            $data['label-outer'] = $this->label();
             $data['label-inner'] = '';
+        } else {
+            if (isset($data['setting']['label-inner']) && $data['setting']['label-inner'] === true) {
+                $data['label-outer'] = '';
+                $data['label-inner'] = $this->label();
+            } else {
+                $data['label-outer'] = $this->label();
+                $data['label-inner'] = '';
+            }
         }
 
         $data['help']  = $this->help();

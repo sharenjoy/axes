@@ -423,11 +423,11 @@ if ( ! function_exists('set_package_asset_to_view'))
                 if ($value['queue'])
                 {
                     Theme::asset()->queue($value['type'])
-                                  ->add($key, $path.$value['file']);
+                                  ->add($key, asset($path.$value['file']));
                 }
                 else
                 {
-                    Theme::asset()->add($key, $path.$value['file']);
+                    Theme::asset()->add($key, asset($path.$value['file']));
                 }
             }
         }

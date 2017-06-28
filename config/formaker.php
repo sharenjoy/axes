@@ -8,7 +8,7 @@ return [
      * --------------------------------------------------------------------------
      *
      * // The attrubutes can be allowed the following
-     * value, type, help, placeholder, label, label-inner, args
+     * value, type, help, placeholder, label, label-inner, none-label, args
      * label-class, error-class, help-class, inner-div, outer-div
      * input, filter, category, option, method, relation, pleaseSelect
      * 
