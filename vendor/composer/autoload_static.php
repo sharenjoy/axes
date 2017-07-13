@@ -3549,6 +3549,7 @@ class ComposerStaticInit2c6c00b0d99d385951a38f469e154c31
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\CustomerSimpleForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/CustomerSimpleForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\DatepickerForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/DatepickerForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\DaterangeForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/DaterangeForm.php',
+        'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\DaterangewithtimeForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/DaterangewithtimeForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\DuplicateForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/DuplicateForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\EmailForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/EmailForm.php',
         'Sharenjoy\\Cmsharenjoy\\Service\\Formaker\\Forms\\EmployeeForm' => __DIR__ . '/..' . '/sharenjoy/cmsharenjoy/src/Service/Formaker/Forms/EmployeeForm.php',
