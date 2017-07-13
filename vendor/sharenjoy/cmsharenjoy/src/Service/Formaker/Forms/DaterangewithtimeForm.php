@@ -7,7 +7,7 @@ class DaterangewithtimeForm extends FormAbstract implements FormInterface {
         $data['class'] = array_get($data, 'others.setting.args.class') ?: 
                          'form-control daterange daterange-inline add-ranges';
 
-        $data['data-format']     = array_get($data, 'others.setting.args.data-format') ?: 'YYYY-MM-DD hh:mm:ss';
+        $data['data-format']     = array_get($data, 'others.setting.args.data-format') ?: 'YYYY-MM-DD h:mm A';
         $data['data-start-date'] = array_get($data, 'others.setting.args.data-start-date') ?: 
                                    date('Y-m-d', time() - 86400);
         $data['data-end-date']   = array_get($data, 'others.setting.args.data-end-date') ?: date('Y-m-d', time());
