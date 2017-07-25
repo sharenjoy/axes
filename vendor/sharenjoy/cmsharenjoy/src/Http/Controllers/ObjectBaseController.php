@@ -236,7 +236,7 @@ abstract class ObjectBaseController extends BaseController {
             return message()->json(404, $message);
         }
 
-        $result['title']   = Transformer::title($model->toArray());
+        $result['title']   = Transformer::title($model);
         $result['subject'] = pick_trans('confirm_deleted');
 
         return message()->json(200, '', $result);

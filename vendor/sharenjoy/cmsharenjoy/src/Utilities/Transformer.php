@@ -22,8 +22,16 @@ class Transformer
     //     ];
     // }
 
-    public static function title($model)
+    public static function title($model, $slug = null)
     {
+        if ($slug) {
+            if (is_array($model[$slug]) && $model[$slug][current_backend_language()]) {
+                return $model[$slug][current_backend_language()];
+            }
+
+            return $model[$slug];
+        }
+
         $existsAry = ['title', 'name', 'subject', 'tag'];
 
         foreach ($existsAry as $value)
