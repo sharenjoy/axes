@@ -16,7 +16,15 @@
                         @if(Session::get('onAction') != 'filealbum')
                         <th width="25%"><i class="fa fa-folder"></i> {{pick_trans('files.folders')}}</th>
                         @endif
-                        <th><i class="fa fa-file-text"></i> {{pick_trans('files.files_title')}}</th>
+                        <th>
+                            <i class="fa fa-file-text"></i> {{pick_trans('files.files_title')}}
+                            @if(Session::get('onAction') != 'filealbum')
+                            <select class="form-control pull-right" style="width: 150px;" onchange="if (this.value) window.location.href=this.value">
+                                <option value="?sort=asc">順序: 舊至新</option>
+                                <option value="?sort=desc" @if(Request::input('sort') == 'desc')selected="selected"@endif>順序: 新至舊</option>
+                            </select>
+                            @endif
+                        </th>
                     </tr>
                 </tfoot>
                 

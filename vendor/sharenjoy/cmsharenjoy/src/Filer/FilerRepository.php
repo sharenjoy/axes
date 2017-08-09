@@ -148,7 +148,7 @@ class FilerRepository implements FilerInterface {
      * @return	array
      *
     **/
-    public function folderContents($parent = 0)
+    public function folderContents($parent = 0, $filesBySort = 'asc')
     {
         // ci()->load->library('keywords/Keywords');
 
@@ -162,7 +162,7 @@ class FilerRepository implements FilerInterface {
 
         $folders = Folder::findByParentBySort($parent)->toArray();
 
-        $files = File::findByFolderIdBySort($parent)->toArray();
+        $files = File::findByFolderIdBySort($parent, $filesBySort)->toArray();
 
         // let's be nice and add a date in that's formatted like the rest of the CMS
         if ($folders) {

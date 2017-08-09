@@ -58,10 +58,10 @@ class File extends Eloquent
      * @param  int  $parent_id
      * @return void
      */
-    public static function findByFolderIdBySort($parent_id = 0)
+    public static function findByFolderIdBySort($parent_id = 0, $sort = 'asc')
     {
         return static::where('folder_id','=',$parent_id)
-            ->orderBy('sort')->get();
+            ->orderBy('sort', $sort)->get();
     }
 
     /**

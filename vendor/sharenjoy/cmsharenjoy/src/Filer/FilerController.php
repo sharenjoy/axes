@@ -3,6 +3,7 @@
 use Config, Filer, Message;
 use App, Response, Redirect;
 use Illuminate\Http\Request;
+use Request as RequestFacade;
 use Sharenjoy\Cmsharenjoy\Http\Controllers\BaseController;
 
 /**
@@ -59,7 +60,7 @@ class FilerController extends BaseController {
             'ul class="dd-list"'
         );
 
-        $fileResult = $this->foldercontents($parentId);
+        $fileResult = $this->foldercontents($parentId, RequestFacade::input('sort', 'asc'));
         if ( ! $fileResult['status'])
         {
             Message::error($fileResult['message']);
@@ -97,7 +98,7 @@ class FilerController extends BaseController {
             'ul class="dd-list"'
         );
 
-        $fileResult = $this->foldercontents($parentId);
+        $fileResult = $this->foldercontents($parentId, RequestFacade::input('sort', 'asc'));
         if ( ! $fileResult['status'])
         {
             Message::error($fileResult['message']);
@@ -135,7 +136,7 @@ class FilerController extends BaseController {
             'ul class="dd-list"'
         );
 
-        $fileResult = $this->foldercontents($parentId);
+        $fileResult = $this->foldercontents($parentId, RequestFacade::input('sort', 'asc'));
         if ( ! $fileResult['status'])
         {
             Message::error($fileResult['message']);
@@ -219,9 +220,9 @@ class FilerController extends BaseController {
      *
      * Grabs the parent id from the POST data.
      */
-    public function foldercontents($parent)
+    public function foldercontents($parent, $filesBySort = 'asc')
     {
-        return Filer::folderContents($parent);
+        return Filer::folderContents($parent, $filesBySort);
     }
 
     /**
