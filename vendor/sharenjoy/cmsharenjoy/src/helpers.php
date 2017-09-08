@@ -136,8 +136,8 @@ if ( ! function_exists('current_language'))
 {
     function current_language()
     {
-        $whichEnd = session()->get('sharenjoy.whichEnd');
-        
+        $whichEnd = \Request::segment(1) == config('cmsharenjoy.access_url') ? 'backEnd' : 'frontEnd';
+
         if ($whichEnd == 'backEnd') {
             return current_backend_language();
         } elseif ($whichEnd == 'frontEnd') {
@@ -616,5 +616,32 @@ if ( ! function_exists('img_resize'))
         }
         
         return asset($thumbPath.'/'.$targetFilename);
+    }
+}
+
+if ( ! function_exists('img_resize_dpa'))
+{
+    /**
+     * To resize the image
+     */
+    function img_resize_dpa($filename, $width, $height)
+    {
+        $path = config('filer.path');
+        $imagePath = public_path().$path.'/'.$filename;
+
+        if (! $filename || !file_exists($imagePath)) {
+            return null;
+        }
+
+        $imageInfo = pathinfo($filename);
+        $thumbPath = config('filer.thumbPath');
+        $targetFilename = "{$imageInfo['filename']}.{$imageInfo['extension']}";
+        $thumbImagePath = public_path().$thumbPath.'/dpa/'.$targetFilename;
+
+        if (! file_exists($thumbImagePath)) {
+            \Image::make($imagePath)->fit($width, $height)->crop(600, 600)->save($thumbImagePath);
+        }
+        
+        return asset($thumbPath.'/dpa/'.$targetFilename);
     }
 }

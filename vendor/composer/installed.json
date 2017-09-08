@@ -4417,23 +4417,23 @@
     },
     {
         "name": "sharenjoy/cmsharenjoy",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v1.0.1",
+        "version_normalized": "1.0.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/sharenjoy/cmsharenjoy.git",
-            "reference": "0affd202ca0a25b53303588912dd43b427bcee0b"
+            "reference": "01c09525c8d1e08e5e6977dd2b8f0538c6b15bce"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/0affd202ca0a25b53303588912dd43b427bcee0b",
-            "reference": "0affd202ca0a25b53303588912dd43b427bcee0b",
+            "url": "https://api.github.com/repos/sharenjoy/cmsharenjoy/zipball/01c09525c8d1e08e5e6977dd2b8f0538c6b15bce",
+            "reference": "01c09525c8d1e08e5e6977dd2b8f0538c6b15bce",
             "shasum": ""
         },
         "require": {
             "laravel/framework": "~5.2"
         },
-        "time": "2017-08-09T11:03:15+00:00",
+        "time": "2017-09-08T06:17:34+00:00",
         "type": "library",
         "installation-source": "source",
         "autoload": {
